@@ -349,7 +349,66 @@ footer{overflow:hidden;position:relative}
   .dock a:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
 }
 @media (max-width:720px) and (prefers-reduced-motion:reduce){.dock a:active,.btn:active{transform:none}}
+
+/* ===== Theme switch button ===== */
+.skin-btn{appearance:none;cursor:pointer;flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--fg);transition:transform .3s,border-color .2s}
+.skin-btn:hover{border-color:var(--line-hi);transform:rotate(-12deg)}
+.skin-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.skin-btn .dot{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(255,255,255,.7)}
+.skin-btn .dot{background:linear-gradient(135deg,#7dd3fc,#0284c7)}
+html[data-skin="sky"] .skin-btn .dot{background:linear-gradient(135deg,#ff5a6e,#7a0b1f)}
+html.theming,html.theming *{transition:background-color .45s ease,color .45s ease,border-color .45s ease,fill .45s ease!important}
+
+/* ===== Sky theme: sky blue + white ===== */
+html[data-skin="sky"]{
+  --bg:#f4f9ff;
+  --bg-2:#e9f5ff;
+  --surface:rgba(255,255,255,.72);
+  --line:rgba(12,74,130,.12);
+  --line-hi:rgba(14,165,233,.45);
+  --fg:#0b2540;
+  --muted:#4d6a86;
+  --ruby:#0ea5e9;
+  --ruby-deep:#7dd3fc;
+  --gold:#0369a1;
+  color-scheme:light;
+}
+html[data-skin="sky"] body{background:linear-gradient(180deg,#eaf6ff 0%,var(--bg) 40%,#ffffff 100%)}
+html[data-skin="sky"] .aurora span{opacity:.55}
+html[data-skin="sky"] .aurora span:nth-child(2){background:#bae6fd;opacity:.6}
+html[data-skin="sky"] .aurora span:nth-child(3){background:#c7e8ff}
+html[data-skin="sky"] .grain{opacity:.035}
+html[data-skin="sky"] .spot{background:radial-gradient(600px circle at var(--sx,50%) var(--sy,30%),rgba(56,189,248,.14),transparent 45%)}
+html[data-skin="sky"] .nav{background:rgba(255,255,255,.78);box-shadow:0 8px 30px -18px rgba(12,74,130,.35)}
+html[data-skin="sky"] .menu a:hover,html[data-skin="sky"] .btn-ghost:hover,html[data-skin="sky"] .copy:hover{background:rgba(14,165,233,.08)}
+html[data-skin="sky"] .lang-switch,html[data-skin="sky"] .roles li,html[data-skin="sky"] .skin-btn{background:#fff}
+html[data-skin="sky"] .btn-primary{background:linear-gradient(120deg,#38bdf8,#0284c7);box-shadow:0 12px 30px -10px rgba(2,132,199,.5)}
+html[data-skin="sky"] .btn-primary:hover{box-shadow:0 16px 36px -10px rgba(2,132,199,.6)}
+html[data-skin="sky"] .btn-ghost{background:#fff}
+html[data-skin="sky"] h1 em{background-image:linear-gradient(100deg,#0ea5e9 10%,#0369a1 55%,#38bdf8 90%)}
+html[data-skin="sky"] .portrait .frame{box-shadow:0 34px 70px -30px rgba(12,74,130,.45),0 0 0 8px rgba(14,165,233,.08)}
+html[data-skin="sky"] .portrait .frame::after{background:linear-gradient(180deg,transparent 65%,rgba(11,37,64,.35))}
+html[data-skin="sky"] .portrait::before{border-color:rgba(14,165,233,.35)}
+html[data-skin="sky"] .badge,html[data-skin="sky"] .live{background:rgba(255,255,255,.9);box-shadow:0 10px 24px -12px rgba(12,74,130,.4)}
+html[data-skin="sky"] .stats,html[data-skin="sky"] .svc,html[data-skin="sky"] .job,html[data-skin="sky"] .langs{box-shadow:0 14px 34px -24px rgba(12,74,130,.35)}
+html[data-skin="sky"] .svc::before{background:radial-gradient(circle,rgba(56,189,248,.25),transparent 70%)}
+html[data-skin="sky"] .svc .ic{background:linear-gradient(135deg,rgba(56,189,248,.18),rgba(255,255,255,.6))}
+html[data-skin="sky"] .svc:hover,html[data-skin="sky"] .job:hover,html[data-skin="sky"] .langs:hover{border-color:rgba(14,165,233,.4)}
+html[data-skin="sky"] .glow::after{background:radial-gradient(420px circle at var(--mx) var(--my),rgba(56,189,248,.12),transparent 45%)}
+html[data-skin="sky"] .job.current::before{box-shadow:0 0 0 6px rgba(14,165,233,.2)}
+html[data-skin="sky"] .tag{background:rgba(14,165,233,.12);color:#0369a1}
+html[data-skin="sky"] .marquee{background:linear-gradient(90deg,rgba(56,189,248,.1),rgba(255,255,255,.6),rgba(56,189,248,.1))}
+html[data-skin="sky"] .track span:nth-child(even){background-image:linear-gradient(90deg,#0ea5e9,#0369a1)}
+html[data-skin="sky"] .contact{background:radial-gradient(120% 140% at 100% 0%,rgba(56,189,248,.3),transparent 55%),radial-gradient(90% 120% at 0% 100%,rgba(186,230,253,.6),transparent 60%),#fff;
+  box-shadow:0 30px 70px -40px rgba(12,74,130,.45)}
+html[data-skin="sky"] .wa-card{background:rgba(37,211,102,.08)}
+html[data-skin="sky"] .mega{background-image:linear-gradient(180deg,rgba(14,165,233,.22) 0%,rgba(56,189,248,.12) 45%,rgba(56,189,248,0) 95%)}
+html[data-skin="sky"] .dock{background:rgba(255,255,255,.88);box-shadow:0 18px 40px -16px rgba(12,74,130,.45)}
+html[data-skin="sky"] ::selection{background:#0ea5e9;color:#fff}
+html[data-skin="sky"]{scrollbar-color:#bfe3fb var(--bg)}
 </style>
+<script>try{var sk=localStorage.getItem("skin");if(sk==="sky")document.documentElement.setAttribute("data-skin","sky")}catch(e){}</script>
 </head>
 <body>
 <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -370,6 +429,7 @@ footer{overflow:hidden;position:relative}
       <button type="button" id="lang-bn" data-lang="bn" lang="bn" aria-pressed="false">বাংলা</button>
       <button type="button" id="lang-ar" data-lang="ar" lang="ar" aria-pressed="false">عربي</button>
     </div>
+    <button class="skin-btn" id="skin-btn" type="button" aria-label="Switch to Sky theme" title="Sky theme"><span class="dot"></span></button>
   </div>
 </header>
 
@@ -701,20 +761,22 @@ document.getElementById('copy-email').addEventListener('click', function () {
     function make(init) {
       return { x: Math.random() * W, y: init ? Math.random() * H : H + 10, r: Math.random() * 1.6 + .4,
         vy: -(Math.random() * .35 + .1), vx: (Math.random() - .5) * .15, a: Math.random() * Math.PI * 2,
-        c: Math.random() < .7 ? '243,211,166' : '255,90,110' };
+        k: Math.random() < .7 ? 0 : 1 };
     }
     size(); var N = W < 600 ? 40 : 80; for (var i = 0; i < N; i++) P.push(make(true));
     addEventListener('resize', size);
     function tick() {
       if (!running) return;
       ctx.clearRect(0, 0, W, H);
+      var pal = document.documentElement.getAttribute('data-skin') === 'sky' ? ['2,132,199', '56,189,248'] : ['243,211,166', '255,90,110'];
       for (var i = 0; i < P.length; i++) {
         var p = P[i]; p.x += p.vx; p.y += p.vy; p.a += .03;
         if (p.y < -10) P[i] = p = make(false);
         var al = .25 + Math.sin(p.a) * .25 + .25;
         ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
-        ctx.fillStyle = 'rgba(' + p.c + ',' + al.toFixed(3) + ')';
-        ctx.shadowColor = 'rgba(' + p.c + ',.8)'; ctx.shadowBlur = 6; ctx.fill();
+        var pc = pal[p.k];
+        ctx.fillStyle = 'rgba(' + pc + ',' + al.toFixed(3) + ')';
+        ctx.shadowColor = 'rgba(' + pc + ',.8)'; ctx.shadowBlur = 6; ctx.fill();
       }
       requestAnimationFrame(tick);
     }
@@ -723,6 +785,28 @@ document.getElementById('copy-email').addEventListener('click', function () {
     }
     requestAnimationFrame(tick);
   }
+})();
+
+
+/* ===== Theme switch ===== */
+(function () {
+  var root = document.documentElement, btn = document.getElementById('skin-btn');
+  var meta = document.querySelector('meta[name="theme-color"]');
+  function label() {
+    var sky = root.getAttribute('data-skin') === 'sky';
+    var next = sky ? 'Ruby' : 'Sky';
+    btn.setAttribute('aria-label', 'Switch to ' + next + ' theme'); btn.title = next + ' theme';
+    if (meta) meta.setAttribute('content', sky ? '#f4f9ff' : '#0c0809');
+  }
+  btn.addEventListener('click', function () {
+    var sky = root.getAttribute('data-skin') === 'sky';
+    root.classList.add('theming');
+    if (sky) root.removeAttribute('data-skin'); else root.setAttribute('data-skin', 'sky');
+    try { localStorage.setItem('skin', sky ? 'ruby' : 'sky'); } catch (e) {}
+    label();
+    setTimeout(function () { root.classList.remove('theming'); }, 500);
+  });
+  label();
 })();
 
 /* ===== Mobile dock scrollspy ===== */
