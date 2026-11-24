@@ -1,1 +1,655 @@
-<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Jabed</title><link rel='stylesheet' href='style.css'></head><body><div class='card'><h1>Jabed</h1><p>Connect with me</p><a href='https://www.facebook.com/share/1ERb8BcRgr/'>Facebook</a><a href='https://www.instagram.com/mehedihjabed.25'>Instagram</a><a href='https://www.tiktok.com/@mehedi.h.jabed'>TikTok</a><a href='https://www.snapchat.com/add/mehedi.jabed'>Snapchat</a><a href='https://wa.me/966565176125'>WhatsApp</a></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mehedi H Jabed</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mehedi H Jabed: digital marketer, designer, content creator and sales professional based in Riyadh, Saudi Arabia.">
+<meta property="og:title" content="Mehedi H Jabed · Portfolio">
+<meta property="og:description" content="Digital marketing, design, video and sales. 7 years in Saudi Arabia.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jabed-social.vercel.app/">
+<meta property="og:image" content="https://jabed-social.vercel.app/me.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c0809">
+<link rel="icon" href="me.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+<style>
+/* Layout: sticky glass nav; split hero (text | framed portrait); then stacked sections on a ruby-lit dark ground */
+:root{
+  --bg:#0c0809;
+  --bg-2:#130c0e;
+  --surface:rgba(30,19,22,.6);
+  --line:rgba(255,220,225,.09);
+  --line-hi:rgba(255,120,140,.35);
+  --fg:#f8eef0;
+  --muted:#b39aa0;
+  --ruby:#e0213f;
+  --ruby-deep:#7a0b1f;
+  --gold:#f3d3a6;
+  --font-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --font-body:"Manrope",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --wrap:1120px;
+  color-scheme:dark;
+}
+html[lang="bn"]{--font-display:"Hind Siliguri",system-ui,sans-serif;--font-body:"Hind Siliguri",system-ui,"Nirmala UI",sans-serif}
+html[lang="ar"]{--font-display:"Cairo",system-ui,"Segoe UI",Tahoma,sans-serif;--font-body:"Cairo",system-ui,"Segoe UI",Tahoma,sans-serif}
+.latin{font-family:"Unbounded","Arial Black",system-ui,sans-serif}
+html[lang="bn"] h1,html[lang="ar"] h1{letter-spacing:0;line-height:1.25}
+html[lang="bn"] h2,html[lang="ar"] h2{letter-spacing:0;line-height:1.3}
+html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em;line-height:1.02;display:inline-block;margin-bottom:.15em}
+html[lang="bn"] .eyebrow,html[lang="ar"] .eyebrow,html[lang="bn"] .soc-label,html[lang="ar"] .soc-label,html[lang="ar"] .live,html[lang="bn"] .live,html[lang="ar"] .langs h3,html[lang="bn"] .langs h3,html[lang="ar"] .tag,html[lang="bn"] .tag{letter-spacing:0}
+html[lang="bn"] .eyebrow,html[lang="ar"] .eyebrow{font-size:14px}
+[dir="rtl"] .flip{transform:scaleX(-1)}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora span{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;animation:drift 20s ease-in-out infinite alternate}
+.aurora span:nth-child(1){width:620px;height:620px;background:var(--ruby-deep);top:-220px;left:-180px}
+.aurora span:nth-child(2){width:520px;height:520px;background:#5a3a12;top:10%;right:-200px;opacity:.3;animation-delay:-7s}
+.aurora span:nth-child(3){width:480px;height:480px;background:#4a0a2e;bottom:-200px;left:30%;animation-delay:-13s}
+@keyframes drift{to{transform:translate(70px,50px) scale(1.15)}}
+main,header.nav,footer{position:relative;z-index:1}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:rgba(12,8,9,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.02em}
+.brand img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:50% 25%;border:1.5px solid var(--gold)}
+.menu{display:flex;gap:4px}
+.menu a{text-decoration:none;font-size:14px;font-weight:600;color:var(--muted);padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
+.menu a:hover{color:var(--fg);background:rgba(255,255,255,.05)}
+.menu a:focus-visible,.btn:focus-visible,.copy:focus-visible,.soc:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (max-width:720px){.menu a:not(.menu-cta){display:none}}
+.menu-cta{color:var(--fg)!important;border:1px solid var(--line-hi)}
+.nav .menu{margin-inline-start:auto}
+.lang-switch{display:flex;padding:3px;gap:2px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.lang-switch button{appearance:none;cursor:pointer;border:0;background:transparent;color:var(--muted);padding:6px 10px;border-radius:999px;font:700 12px/1.2 var(--font-body);transition:background .2s,color .2s}
+.lang-switch button[lang="bn"]{font-family:"Hind Siliguri",system-ui,sans-serif;font-size:13px}
+.lang-switch button[lang="ar"]{font-family:"Cairo",system-ui,sans-serif;font-size:13px}
+.lang-switch button:hover{color:var(--fg)}
+.lang-switch button[aria-pressed="true"]{background:var(--ruby);color:#fff}
+.lang-switch button:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+@media (max-width:420px){.brand .latin{display:none}.nav .wrap{gap:8px}.menu-cta{padding:8px 10px!important}.lang-switch button{padding:6px 8px}}
+
+/* Hero */
+.hero{padding-block:72px 56px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+h1{font-family:var(--font-display);font-weight:700;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-.03em;margin:18px 0 20px;text-wrap:balance}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--ruby) 10%,var(--gold) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(16px,1.8vw,19px);color:var(--muted);max-width:52ch;margin:0 0 28px}
+.lead strong{color:var(--fg);font-weight:600}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px;padding:0;list-style:none}
+.roles li{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:15px;padding:14px 22px;border-radius:14px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-primary{background:linear-gradient(120deg,var(--ruby),#b3122e);color:#fff;box-shadow:0 12px 30px -10px rgba(224,33,63,.6)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(224,33,63,.75)}
+.btn-ghost{border:1px solid var(--line-hi);color:var(--fg)}
+.btn-ghost:hover{background:rgba(255,255,255,.05);transform:translateY(-2px)}
+
+.portrait{position:relative;justify-self:end;width:100%;max-width:420px}
+.portrait .frame{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:28px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 8px rgba(243,211,166,.04)}
+.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.portrait .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(12,8,9,.75))}
+.portrait::before{content:"";position:absolute;inset:-14px;border-radius:36px;border:1px solid rgba(243,211,166,.18);
+  mask:linear-gradient(135deg,#000 20%,transparent 50%,#000 80%);-webkit-mask:linear-gradient(135deg,#000 20%,transparent 50%,#000 80%)}
+.badge{position:absolute;inset-inline-start:-18px;bottom:28px;z-index:2;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;
+  background:rgba(20,12,14,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line)}
+.badge b{font-family:var(--font-display);font-size:24px;color:var(--gold);line-height:1}
+.badge span{font-size:12px;color:var(--muted);line-height:1.3}
+.live{position:absolute;inset-inline-end:16px;top:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;
+  background:rgba(12,8,9,.7);border:1px solid var(--line);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.live i{width:7px;height:7px;border-radius:50%;background:#3ddc84;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.6)}70%{box-shadow:0 0 0 8px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+
+@media (max-width:860px){
+  .hero{padding-block:40px 32px}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .portrait{justify-self:center;order:-1;max-width:340px}
+  .badge{inset-inline-start:-8px}
+}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;background:var(--surface);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow:hidden}
+.stat{padding:24px 22px;border-inline-start:1px solid var(--line)}
+.stat:first-child{border-inline-start:0}
+.stat b{display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.4vw,40px);line-height:1.1;font-variant-numeric:tabular-nums}
+.stat b sup{font-size:.5em;color:var(--ruby);vertical-align:top;margin-inline-start:2px}
+.stat span{font-size:13px;color:var(--muted)}
+@media (max-width:720px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-inline-start:0}.stat:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* Sections */
+section.block{padding-block:88px 0}
+.head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 40px;margin-bottom:36px}
+h2{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;line-height:1.1;margin:10px 0 0;text-wrap:balance}
+.head p{color:var(--muted);max-width:44ch;margin:0}
+
+/* About */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+.about .text{font-size:17px;color:var(--muted);min-width:0}
+.about .text p{margin:0 0 16px;max-width:62ch}
+.about .text strong{color:var(--fg)}
+.langs{border:1px solid var(--line);border-radius:22px;padding:24px;background:var(--surface)}
+.langs h3{margin:0 0 16px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.lang{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.lang:first-of-type{border-top:0}
+.lang b{font-size:16px}
+.lang span{font-size:13px;color:var(--muted)}
+.lang .native{font-family:var(--font-body);font-size:18px;color:var(--fg);opacity:.75}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{position:relative;overflow:hidden;padding:28px 24px;border-radius:22px;border:1px solid var(--line);background:var(--surface);
+  transition:transform .3s,border-color .3s}
+.svc::before{content:"";position:absolute;width:220px;height:220px;inset-inline-end:-80px;top:-80px;border-radius:50%;
+  background:radial-gradient(circle,rgba(224,33,63,.25),transparent 70%);opacity:0;transition:opacity .4s}
+.svc:hover{transform:translateY(-4px);border-color:var(--line-hi)}
+.svc:hover::before{opacity:1}
+.svc .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-size:21px;margin-bottom:20px;
+  background:linear-gradient(135deg,rgba(224,33,63,.2),rgba(243,211,166,.08));border:1px solid var(--line-hi);color:var(--gold)}
+.svc h3{margin:0 0 8px;font-size:19px;font-weight:700}
+.svc p{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:900px){.services{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.services{grid-template-columns:1fr;gap:10px}
+  .svc{display:grid;grid-template-columns:auto 1fr;column-gap:16px;padding:18px}
+  .svc .ic{grid-row:span 2;width:46px;height:46px;font-size:18px;margin:0}
+  .svc h3{font-size:17px;margin:0 0 2px}.svc p{font-size:14px}}
+
+/* Experience */
+.timeline{position:relative;display:flex;flex-direction:column;gap:16px;padding-inline-start:28px}
+.timeline::before{content:"";position:absolute;inset-inline-start:7px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--ruby),var(--gold) 70%,transparent)}
+.job{position:relative;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--surface)}
+.job::before{content:"";position:absolute;inset-inline-start:-27px;top:30px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--ruby)}
+.job.current::before{background:var(--ruby);box-shadow:0 0 0 6px rgba(224,33,63,.2)}
+.job-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline}
+.job h3{margin:0;font-size:20px}
+.when{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--gold);font-variant-numeric:tabular-nums}
+.org{margin:4px 0 10px;color:var(--fg);opacity:.85;font-weight:600}
+.job p{margin:0;color:var(--muted);max-width:70ch}
+.tag{display:inline-block;margin-inline-start:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:rgba(224,33,63,.15);color:#ff8fa1;vertical-align:middle}
+
+/* Contact */
+.contact{position:relative;overflow:hidden;border-radius:32px;border:1px solid var(--line-hi);padding:clamp(28px,5vw,56px);
+  background:radial-gradient(120% 140% at 100% 0%,rgba(224,33,63,.28),transparent 55%),radial-gradient(90% 120% at 0% 100%,rgba(243,211,166,.12),transparent 60%),var(--bg-2)}
+.contact h2{font-size:clamp(30px,5vw,56px);max-width:16ch}
+.contact .lead{margin-top:16px}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:8px 0 28px}
+.mail a{font-family:var(--font-display);font-size:clamp(17px,2.6vw,26px);font-weight:500;text-decoration:none;word-break:break-all;
+  border-bottom:2px solid var(--ruby);padding-bottom:2px}
+.copy{appearance:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid var(--line-hi);
+  background:transparent;color:var(--fg);font:600 13px var(--font-body)}
+.copy:hover{background:rgba(255,255,255,.05)}
+.socials{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.soc-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-inline-end:6px}
+.soc{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#fff;font-size:16px;
+  transition:transform .2s,box-shadow .2s}
+.soc:hover{transform:translateY(-3px);box-shadow:0 8px 20px -6px rgba(0,0,0,.6)}
+.soc.fb{background:#1877f2}
+.soc.ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+.soc.tt{background:#111;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.soc.sc{background:#fffc00;color:#111}
+.wa-grid{display:grid;gap:12px;margin-top:12px;max-width:320px}
+.wa-card{display:flex;align-items:center;gap:14px;text-decoration:none;padding:14px 16px;border-radius:16px;
+  border:1px solid rgba(37,211,102,.35);background:rgba(37,211,102,.07);transition:transform .2s,background .2s}
+.wa-card:hover{transform:translateY(-2px);background:rgba(37,211,102,.13)}
+.wa-card:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wa-card .i{width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;background:#25d366;color:#fff;font-size:20px}
+.wa-card small{display:block;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.wa-card b{display:block;font-size:17px;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+footer{padding-block:48px 40px;margin-top:88px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}
+
+.reveal{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.32s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ===== Premium layer ===== */
+::selection{background:var(--ruby);color:#fff}
+html{scrollbar-color:#3a1a20 var(--bg)}
+.grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.spot{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .6s;
+  background:radial-gradient(600px circle at var(--sx,50%) var(--sy,30%),rgba(224,33,63,.09),transparent 45%)}
+.spot.on{opacity:1}
+.progress{position:absolute;inset-inline:0;bottom:-1px;height:2px;transform-origin:0 50%;transform:scaleX(var(--p,0));
+  background:linear-gradient(90deg,var(--ruby),var(--gold))}
+[dir="rtl"] .progress{transform-origin:100% 50%}
+.hero{position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.sparks{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+h1 em{background-size:200% 100%;animation:sheen 6s ease-in-out infinite alternate}
+@keyframes sheen{from{background-position:0% 50%}to{background-position:100% 50%}}
+.portrait{perspective:1000px}
+.portrait .frame{transition:transform .5s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d;will-change:transform}
+.portrait .frame::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(500px circle at var(--gx,50%) var(--gy,0%),rgba(255,236,210,.18),transparent 40%)}
+.portrait:hover .frame::before{opacity:1}
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);
+  transform:translateX(-120%);animation:btnsheen 4.5s ease-in-out infinite 1.5s}
+@keyframes btnsheen{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+
+/* Marquee */
+.marquee{direction:ltr;position:relative;margin-top:72px;padding-block:22px;overflow:hidden;
+  border-block:1px solid var(--line);background:linear-gradient(90deg,rgba(224,33,63,.06),rgba(243,211,166,.05),rgba(224,33,63,.06));
+  -webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{display:inline-flex;align-items:center;gap:28px;padding-inline-end:28px;white-space:nowrap;
+  font-family:var(--font-display);font-weight:700;font-size:clamp(22px,3.2vw,38px);letter-spacing:-.01em;line-height:1.3}
+.track span:nth-child(even){background:linear-gradient(90deg,var(--gold),#c9974f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.track span:nth-child(even)::after{-webkit-text-fill-color:var(--ruby)}
+.track span::after{content:"\2726";font-size:.55em;color:var(--ruby)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* Card glow */
+.glow{position:relative;--mx:50%;--my:50%}
+.glow::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(420px circle at var(--mx) var(--my),rgba(243,211,166,.09),transparent 45%)}
+.glow:hover::after{opacity:1}
+.svc:hover,.job:hover,.langs:hover{border-color:rgba(243,211,166,.28)}
+.svc .ic{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.svc:hover .ic{transform:translateY(-3px) rotate(-6deg)}
+
+/* Scroll reveal (only when JS runs) */
+html.sr-on .sr{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+html.sr-on .sr.in{opacity:1;transform:none}
+
+/* Footer signature */
+footer{overflow:hidden;position:relative}
+.mega{text-align:center;font-weight:700;font-size:clamp(72px,19vw,300px);line-height:.85;letter-spacing:-.04em;margin:0 0 36px;
+  color:transparent;user-select:none;
+  background:linear-gradient(180deg,rgba(243,211,166,.16) 0%,rgba(224,33,63,.12) 45%,rgba(224,33,63,0) 95%);-webkit-background-clip:text;background-clip:text}
+
+@media (hover:none){.spot{display:none}}
+@media (prefers-reduced-motion:reduce){.sparks,.spot{display:none}.track{animation:none}html.sr-on .sr{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="spot" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav"><span class="progress" aria-hidden="true"></span>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="me.jpg" alt="" width="34" height="34"><span class="latin">JABED</span></a>
+    <nav class="menu" aria-label="Main">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#experience" data-i18n="nav.exp">Experience</a>
+      <a class="menu-cta" href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" id="lang-bn" data-lang="bn" lang="bn" aria-pressed="false">বাংলা</button>
+      <button type="button" id="lang-ar" data-lang="ar" lang="ar" aria-pressed="false">عربي</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero"><canvas class="sparks" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow reveal" data-i18n="loc">Riyadh, Saudi Arabia</span>
+        <h1 class="reveal d1"><span class="latin" dir="ltr">Mehedi H&nbsp;Jabed.</span><br><em data-i18n="hero.tag">Marketing that sells.</em></h1>
+        <p class="lead reveal d2" data-i18n="hero.lead">I'm a digital marketer, designer and sales professional from <strong>Bangladesh</strong>, building brands and closing deals in <strong>Saudi Arabia for 7 years</strong>.</p>
+        <ul class="roles reveal d3">
+          <li data-i18n="s.mkt">Digital Marketing</li><li data-i18n="s.gd">Graphic Design</li><li data-i18n="s.vid">Video Editing</li><li data-i18n="s.cc">Content Creation</li><li data-i18n="s.web">Web Development</li><li data-i18n="s.sales">Sales</li>
+        </ul>
+        <div class="ctas reveal d4">
+          <a class="btn btn-primary" href="#contact"><span data-i18n="cta.work">Let's work together</span>
+            <svg class="flip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="https://wa.me/8801347970191" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="wa">WhatsApp</span></a>
+        </div>
+      </div>
+      <div class="portrait reveal d2">
+        <div class="frame"><img src="me.jpg" alt="Portrait of Mehedi H Jabed" width="800" height="800"></div>
+        <span class="live"><i></i><span data-i18n="live">Available</span></span>
+        <div class="badge"><b data-i18n="n.7">7+</b><span data-i18n="badge">Years working<br>in Saudi Arabia</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats glow reveal d3">
+      <div class="stat"><b data-i18n="st1.n">7<sup>+</sup></b><span data-i18n="st1">Years in Saudi Arabia</span></div>
+      <div class="stat"><b data-i18n="st2.n">5<sup>th</sup></b><span data-i18n="st2">Year at Enma Security</span></div>
+      <div class="stat"><b data-i18n="st3.n">4</b><span data-i18n="st3">Languages spoken</span></div>
+      <div class="stat"><b data-i18n="st4.n">6</b><span data-i18n="st4">Skill areas</span></div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><div class="track"><span data-i18n="s.mkt">Digital Marketing</span><span data-i18n="s.gd">Graphic Design</span><span data-i18n="s.vid">Video Editing</span><span data-i18n="s.cc">Content Creation</span><span data-i18n="s.web">Web Development</span><span data-i18n="s.sales">Sales</span><span data-i18n="s.mkt">Digital Marketing</span><span data-i18n="s.gd">Graphic Design</span><span data-i18n="s.vid">Video Editing</span><span data-i18n="s.cc">Content Creation</span><span data-i18n="s.web">Web Development</span><span data-i18n="s.sales">Sales</span></div></div>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="head sr">
+        <div><span class="eyebrow" data-i18n="about.eb">About me</span><h2 data-i18n="about.h">Creative mind, sales instinct.</h2></div>
+      </div>
+      <div class="about">
+        <div class="text sr">
+          <p data-i18n="about.1">I'm <strong>Mehedi H Jabed</strong>, originally from Bangladesh and based in Riyadh. I've spent the last <strong>7 years</strong> working in Saudi Arabia, from airport operations to sales and trading.</p>
+          <p data-i18n="about.2">I'm now in my <strong>5th year at Enma Security Trading Co.</strong> Before that I worked with <strong>Saudi Ground Services (SGS)</strong> at Riyadh airport, managing employees in a fast-paced, high-pressure environment.</p>
+          <p data-i18n="about.3">Alongside that work, I design graphics, edit videos, create content and run digital marketing. I bring the same mix of creativity and people skills to every project.</p>
+        </div>
+        <div class="langs glow sr">
+          <h3 data-i18n="langs">Languages</h3>
+          <div class="lang"><div><b data-i18n="l.bn">Bangla</b><br><span data-i18n="lv.native">Native</span></div><span class="native" lang="bn">বাংলা</span></div>
+          <div class="lang"><div><b data-i18n="l.en">English</b><br><span data-i18n="lv.pro">Professional</span></div><span class="native" lang="en">English</span></div>
+          <div class="lang"><div><b data-i18n="l.hi">Hindi</b><br><span data-i18n="lv.fluent">Fluent</span></div><span class="native" lang="hi">हिन्दी</span></div>
+          <div class="lang"><div><b data-i18n="l.ur">Urdu</b><br><span data-i18n="lv.fluent">Fluent</span></div><span class="native" lang="ur" dir="rtl">اردو</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="head sr">
+        <div><span class="eyebrow" data-i18n="svc.eb">What I do</span><h2 data-i18n="nav.services">Services</h2></div>
+        <p data-i18n="svc.p">From the first design to the final sale, I can help with every step of growing a brand.</p>
+      </div>
+      <div class="services">
+        <article class="svc glow sr"><div class="ic"><i class="fa-solid fa-bullhorn"></i></div><h3 data-i18n="s.mkt">Digital Marketing</h3><p data-i18n="s.mkt.p">Social media strategy, paid ads and campaigns that bring real customers.</p></article>
+        <article class="svc glow sr"><div class="ic"><i class="fa-solid fa-pen-nib"></i></div><h3 data-i18n="s.gd">Graphic Design</h3><p data-i18n="s.gd.p">Logos, posters, social posts and brand visuals that look premium.</p></article>
+        <article class="svc glow sr"><div class="ic"><i class="fa-solid fa-film"></i></div><h3 data-i18n="s.vid">Video Editing</h3><p data-i18n="s.vid.p">Reels, TikToks and promo videos, cut and colored to keep people watching.</p></article>
+        <article class="svc glow sr"><div class="ic"><i class="fa-solid fa-camera"></i></div><h3 data-i18n="s.cc">Content Creation</h3><p data-i18n="s.cc.p">Ideas, scripts and content in four languages for Gulf and South Asian audiences.</p></article>
+        <article class="svc glow sr"><div class="ic"><i class="fa-solid fa-code"></i></div><h3 data-i18n="s.web">Web Development</h3><p data-i18n="s.web.p">Simple, fast websites and landing pages like this one.</p></article>
+        <article class="svc glow sr"><div class="ic"><i class="fa-solid fa-handshake"></i></div><h3 data-i18n="s.sales">Sales</h3><p data-i18n="s.sales.p">Years of face-to-face sales and client handling in the Saudi market.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="head sr">
+        <div><span class="eyebrow" data-i18n="exp.eb">Career</span><h2 data-i18n="nav.exp">Experience</h2></div>
+        <p data-i18n="exp.p">7 years of work in Saudi Arabia across trading, sales and aviation services.</p>
+      </div>
+      <div class="timeline">
+        <article class="job current glow sr">
+          <div class="job-top"><h3><span data-i18n="j1.t">Sales &amp; Marketing</span> <span class="tag" data-i18n="current">Current</span></h3><span class="when" data-i18n="j1.w">2022 – Present</span></div>
+          <p class="org" data-i18n="j1.o">Enma Security Trading Co. · Riyadh</p>
+          <p data-i18n="j1.d">Now in my 5th year. I handle sales, clients and marketing for a security products trading company.</p>
+        </article>
+        <article class="job glow sr">
+          <div class="job-top"><h3 data-i18n="j2.t">Employee Management</h3><span class="when" data-i18n="j2.w">2019 – 2022</span></div>
+          <p class="org" data-i18n="j2.o">Saudi Ground Services (SGS) · Riyadh Airport</p>
+          <p data-i18n="j2.d">Managed and coordinated staff for ground handling operations at one of the Kingdom's busiest airports.</p>
+        </article>
+        <article class="job glow sr">
+          <div class="job-top"><h3 data-i18n="j3.t">Earlier roles</h3><span class="when" data-i18n="j3.w">Before 2019</span></div>
+          <p class="org" data-i18n="j3.o">Bangladesh &amp; Saudi Arabia</p>
+          <p data-i18n="j3.d">A range of roles in customer service, sales and operations that built my work ethic and people skills.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="contact sr">
+        <span class="eyebrow" data-i18n="nav.contact">Contact</span>
+        <h2 data-i18n="ct.h">Have a project? Let's talk.</h2>
+        <p class="lead" data-i18n="ct.p">Need a design, a video, a marketing plan or a website? Send me an email or a WhatsApp message.</p>
+        <div class="mail">
+          <a href="mailto:jabedh282@gmail.com" id="email" dir="ltr">jabedh282@gmail.com</a>
+          <button class="copy" id="copy-email" type="button"><i class="fa-regular fa-copy"></i><span id="copy-text" data-i18n="copy">Copy</span></button>
+        </div>
+        <div class="ctas">
+          <a class="btn btn-primary" href="mailto:jabedh282@gmail.com"><i class="fa-solid fa-envelope"></i> <span data-i18n="ct.email">Email me</span></a>
+        </div>
+        <div class="wa-grid">
+          <a class="wa-card" href="https://wa.me/8801347970191" target="_blank" rel="noopener">
+            <span class="i"><i class="fa-brands fa-whatsapp"></i></span>
+            <span><small data-i18n="ct.wa">WhatsApp · Bangladesh</small><b><bdi dir="ltr">+880 1347 970191</bdi></b></span>
+          </a>
+        </div>
+        <div class="socials">
+          <span class="soc-label" data-i18n="follow">Follow me</span>
+          <a class="soc fb" href="https://www.facebook.com/share/1ERb8BcRgr/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a class="soc ig" href="https://www.instagram.com/mehedihjabed.25" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="soc tt" href="https://www.tiktok.com/@mehedi.h.jabed" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a class="soc sc" href="https://www.snapchat.com/add/mehedi.jabed" target="_blank" rel="noopener" aria-label="Snapchat" title="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="mega latin" aria-hidden="true">JABED</div>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> <span class="latin">Mehedi H Jabed</span> · <span data-i18n="loc">Riyadh, Saudi Arabia</span></span>
+    <a href="#top" data-i18n="top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+var I18N = {
+  bn: {
+    "nav.about":"আমার সম্পর্কে","nav.services":"সেবাসমূহ","nav.exp":"অভিজ্ঞতা","nav.contact":"যোগাযোগ",
+    "loc":"রিয়াদ, সৌদি আরব",
+    "hero.tag":"যে মার্কেটিং বিক্রি বাড়ায়।",
+    "hero.lead":"আমি <strong>বাংলাদেশের</strong> একজন ডিজিটাল মার্কেটার, ডিজাইনার ও সেলস প্রফেশনাল। <strong>৭ বছর ধরে সৌদি আরবে</strong> ব্র্যান্ড গড়ছি আর বিক্রি বাড়াচ্ছি।",
+    "s.mkt":"ডিজিটাল মার্কেটিং","s.gd":"গ্রাফিক ডিজাইন","s.vid":"ভিডিও এডিটিং","s.cc":"কনটেন্ট ক্রিয়েশন","s.web":"ওয়েব ডেভেলপমেন্ট","s.sales":"সেলস",
+    "cta.work":"চলুন একসাথে কাজ করি","wa":"হোয়াটসঅ্যাপ","live":"কাজের জন্য প্রস্তুত",
+    "n.7":"৭+","badge":"বছর ধরে কাজ করছি<br>সৌদি আরবে",
+    "st1.n":"৭<sup>+</sup>","st1":"বছর সৌদি আরবে",
+    "st2.n":"৫<sup>ম</sup>","st2":"বছর Enma Security-তে",
+    "st3.n":"৪","st3":"ভাষায় কথা বলি",
+    "st4.n":"৬","st4":"দক্ষতার ক্ষেত্র",
+    "about.eb":"আমার সম্পর্কে","about.h":"সৃজনশীল মন, বিক্রির দক্ষতা।",
+    "about.1":"আমি <strong>মেহেদী এইচ জাবেদ</strong>, বাংলাদেশের মানুষ, এখন রিয়াদে থাকি। গত <strong>৭ বছর</strong> ধরে সৌদি আরবে কাজ করছি, এয়ারপোর্ট অপারেশন থেকে শুরু করে সেলস ও ট্রেডিং পর্যন্ত।",
+    "about.2":"এখন আমি <strong>Enma Security Trading Co.</strong>-তে <strong>৫ম বছর</strong> কাজ করছি। এর আগে রিয়াদ এয়ারপোর্টে <strong>সৌদি গ্রাউন্ড সার্ভিসেস (SGS)</strong>-এ কাজ করেছি, যেখানে ব্যস্ত ও চাপের পরিবেশে কর্মীদের ম্যানেজ করতাম।",
+    "about.3":"চাকরির পাশাপাশি আমি গ্রাফিক ডিজাইন, ভিডিও এডিটিং, কনটেন্ট তৈরি আর ডিজিটাল মার্কেটিং করি। প্রতিটি প্রজেক্টে সৃজনশীলতা আর মানুষের সাথে কাজ করার দক্ষতা একসাথে কাজে লাগাই।",
+    "langs":"ভাষা","l.bn":"বাংলা","l.en":"ইংরেজি","l.hi":"হিন্দি","l.ur":"উর্দু",
+    "lv.native":"মাতৃভাষা","lv.pro":"পেশাদার","lv.fluent":"সাবলীল",
+    "svc.eb":"আমি যা করি","svc.p":"প্রথম ডিজাইন থেকে শেষ বিক্রি পর্যন্ত, একটি ব্র্যান্ড বড় করার প্রতিটি ধাপে আমি সাহায্য করতে পারি।",
+    "s.mkt.p":"সোশ্যাল মিডিয়া স্ট্র্যাটেজি, পেইড অ্যাড আর এমন ক্যাম্পেইন যা আসল কাস্টমার আনে।",
+    "s.gd.p":"লোগো, পোস্টার, সোশ্যাল পোস্ট আর প্রিমিয়াম লুকের ব্র্যান্ড ভিজ্যুয়াল।",
+    "s.vid.p":"রিলস, টিকটক আর প্রোমো ভিডিও, এমনভাবে এডিট করা যাতে মানুষ শেষ পর্যন্ত দেখে।",
+    "s.cc.p":"গালফ ও দক্ষিণ এশিয়ার দর্শকদের জন্য চার ভাষায় আইডিয়া, স্ক্রিপ্ট ও কনটেন্ট।",
+    "s.web.p":"সহজ ও দ্রুত ওয়েবসাইট আর ল্যান্ডিং পেজ, ঠিক এটার মতো।",
+    "s.sales.p":"সৌদি বাজারে সরাসরি বিক্রি আর ক্লায়েন্ট সামলানোর বহু বছরের অভিজ্ঞতা।",
+    "exp.eb":"ক্যারিয়ার","exp.p":"ট্রেডিং, সেলস ও এভিয়েশন সার্ভিসে সৌদি আরবে ৭ বছরের কাজ।",
+    "j1.t":"সেলস ও মার্কেটিং","current":"বর্তমান","j1.w":"২০২২ – বর্তমান","j1.o":"Enma Security Trading Co. · রিয়াদ",
+    "j1.d":"এখন ৫ম বছর চলছে। একটি সিকিউরিটি পণ্যের ট্রেডিং কোম্পানিতে সেলস, ক্লায়েন্ট আর মার্কেটিং দেখাশোনা করি।",
+    "j2.t":"কর্মী ব্যবস্থাপনা","j2.w":"২০১৯ – ২০২২","j2.o":"সৌদি গ্রাউন্ড সার্ভিসেস (SGS) · রিয়াদ এয়ারপোর্ট",
+    "j2.d":"সৌদি আরবের অন্যতম ব্যস্ত এয়ারপোর্টে গ্রাউন্ড হ্যান্ডলিং অপারেশনের কর্মীদের ম্যানেজ ও সমন্বয় করেছি।",
+    "j3.t":"আগের কাজ","j3.w":"২০১৯-এর আগে","j3.o":"বাংলাদেশ ও সৌদি আরব",
+    "j3.d":"কাস্টমার সার্ভিস, সেলস ও অপারেশনে নানা কাজ, যা আমার কাজের নিষ্ঠা আর মানুষের সাথে মেশার দক্ষতা তৈরি করেছে।",
+    "ct.h":"কোনো প্রজেক্ট আছে? চলুন কথা বলি।",
+    "ct.p":"ডিজাইন, ভিডিও, মার্কেটিং প্ল্যান বা ওয়েবসাইট লাগবে? ইমেইল বা হোয়াটসঅ্যাপে মেসেজ দিন।",
+    "copy":"কপি","copied":"কপি হয়েছে","selected":"সিলেক্ট হয়েছে",
+    "ct.email":"ইমেইল করুন","ct.wa":"হোয়াটসঅ্যাপ · বাংলাদেশ","follow":"ফলো করুন","top":"উপরে যান ↑"
+  },
+  ar: {
+    "nav.about":"نبذة عني","nav.services":"الخدمات","nav.exp":"الخبرات","nav.contact":"تواصل معي",
+    "loc":"الرياض، المملكة العربية السعودية",
+    "hero.tag":"تسويق يحقق المبيعات.",
+    "hero.lead":"أنا مسوّق رقمي ومصمم ومحترف مبيعات من <strong>بنغلاديش</strong>، أبني العلامات التجارية وأحقق الصفقات في <strong>المملكة العربية السعودية منذ 7 سنوات</strong>.",
+    "s.mkt":"التسويق الرقمي","s.gd":"التصميم الجرافيكي","s.vid":"مونتاج الفيديو","s.cc":"صناعة المحتوى","s.web":"تطوير المواقع","s.sales":"المبيعات",
+    "cta.work":"لنعمل معًا","wa":"واتساب","live":"متاح للعمل",
+    "n.7":"+7","badge":"سنوات من العمل<br>في السعودية",
+    "st1.n":"7<sup>+</sup>","st1":"سنوات في السعودية",
+    "st2.n":"5","st2":"سنوات في <bdi dir=\"ltr\">Enma Security</bdi>",
+    "st3.n":"4","st3":"لغات أتحدثها",
+    "st4.n":"6","st4":"مجالات مهارة",
+    "about.eb":"نبذة عني","about.h":"عقل مبدع وحسّ بيعي.",
+    "about.1":"أنا <strong>مهدي ه. جابد</strong>، من بنغلاديش وأقيم في الرياض. عملت خلال <strong>السنوات السبع</strong> الماضية في المملكة العربية السعودية، من عمليات المطار إلى المبيعات والتجارة.",
+    "about.2":"أعمل حاليًا في سنتي الخامسة لدى <strong><bdi dir='ltr'>Enma Security Trading Co.</bdi></strong> وقبل ذلك عملت مع <strong>الشركة السعودية للخدمات الأرضية (SGS)</strong> في مطار الرياض، حيث كنت أدير الموظفين في بيئة عمل سريعة وعالية الضغط.",
+    "about.3":"إلى جانب عملي، أصمم الجرافيك وأحرر الفيديو وأصنع المحتوى وأدير التسويق الرقمي. وأجمع في كل مشروع بين الإبداع ومهارات التعامل مع الناس.",
+    "langs":"اللغات","l.bn":"البنغالية","l.en":"الإنجليزية","l.hi":"الهندية","l.ur":"الأردية",
+    "lv.native":"اللغة الأم","lv.pro":"مستوى احترافي","lv.fluent":"بطلاقة",
+    "svc.eb":"ما أقدمه","svc.p":"من التصميم الأول حتى إتمام البيع، أساعدك في كل خطوة لتنمية علامتك التجارية.",
+    "s.mkt.p":"استراتيجيات التواصل الاجتماعي والإعلانات المدفوعة وحملات تجلب عملاء حقيقيين.",
+    "s.gd.p":"شعارات وملصقات ومنشورات وهوية بصرية بمظهر راقٍ.",
+    "s.vid.p":"ريلز وتيك توك وفيديوهات ترويجية بمونتاج وألوان تشدّ المشاهد حتى النهاية.",
+    "s.cc.p":"أفكار ونصوص ومحتوى بأربع لغات لجمهور الخليج وجنوب آسيا.",
+    "s.web.p":"مواقع وصفحات هبوط بسيطة وسريعة مثل هذه الصفحة.",
+    "s.sales.p":"سنوات من البيع المباشر والتعامل مع العملاء في السوق السعودي.",
+    "exp.eb":"المسيرة المهنية","exp.p":"7 سنوات من العمل في السعودية في التجارة والمبيعات وخدمات الطيران.",
+    "j1.t":"المبيعات والتسويق","current":"حاليًا","j1.w":"2022 – حتى الآن","j1.o":"<bdi dir=\"ltr\">Enma Security Trading Co.</bdi> · الرياض",
+    "j1.d":"في سنتي الخامسة الآن. أتولى المبيعات والعملاء والتسويق في شركة لتجارة منتجات الأمن.",
+    "j2.t":"إدارة الموظفين","j2.w":"2019 – 2022","j2.o":"الشركة السعودية للخدمات الأرضية (SGS) · مطار الرياض",
+    "j2.d":"أدرت ونسّقت فرق العمل في عمليات الخدمات الأرضية في أحد أكثر مطارات المملكة ازدحامًا.",
+    "j3.t":"أعمال سابقة","j3.w":"قبل 2019","j3.o":"بنغلاديش والسعودية",
+    "j3.d":"أدوار متنوعة في خدمة العملاء والمبيعات والعمليات صقلت أخلاقيات عملي ومهاراتي في التعامل مع الناس.",
+    "ct.h":"لديك مشروع؟ لنتحدث.",
+    "ct.p":"تحتاج تصميمًا أو فيديو أو خطة تسويق أو موقعًا إلكترونيًا؟ راسلني عبر البريد الإلكتروني أو واتساب.",
+    "copy":"نسخ","copied":"تم النسخ","selected":"تم التحديد",
+    "ct.email":"راسلني بالبريد","ct.wa":"واتساب · بنغلاديش","follow":"تابعني","top":"العودة للأعلى ↑"
+  },
+  en: { copied:"Copied", selected:"Selected" }
+};
+var nodes = document.querySelectorAll('[data-i18n]');
+nodes.forEach(function (el) { var k = el.getAttribute('data-i18n'); if (!(k in I18N.en)) I18N.en[k] = el.innerHTML; });
+var current = 'en';
+function t(k) { return (I18N[current] && I18N[current][k]) || I18N.en[k] || k; }
+function setLang(l) {
+  if (!I18N[l]) l = 'en';
+  current = l;
+  var root = document.documentElement;
+  root.lang = l; root.dir = l === 'ar' ? 'rtl' : 'ltr';
+  nodes.forEach(function (el) { el.innerHTML = t(el.getAttribute('data-i18n')); });
+  document.querySelectorAll('.lang-switch button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === l)); });
+  try { localStorage.setItem('lang', l); } catch (e) {}
+}
+document.querySelectorAll('.lang-switch button').forEach(function (b) {
+  b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
+});
+var saved = null;
+try { saved = localStorage.getItem('lang'); } catch (e) {}
+if (!saved) { var nl = (navigator.language || '').slice(0, 2); if (nl === 'ar' || nl === 'bn') saved = nl; }
+if (saved && saved !== 'en') setLang(saved);
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('copy-email').addEventListener('click', function () {
+  var el = document.getElementById('copy-text'), email = 'jabedh282@gmail.com';
+  var done = function (k) { el.textContent = t(k); setTimeout(function () { el.textContent = t('copy'); }, 1800); };
+  var fallback = function () {
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done('selected');
+  };
+  if (navigator.clipboard) navigator.clipboard.writeText(email).then(function () { done('copied'); }, fallback);
+  else fallback();
+});
+
+/* ===== Premium interactions ===== */
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  var nav = document.querySelector('.nav');
+  function prog() { var h = document.documentElement; var max = h.scrollHeight - h.clientHeight; nav.style.setProperty('--p', max > 0 ? (h.scrollTop / max).toFixed(4) : 0); }
+  addEventListener('scroll', prog, { passive: true }); prog();
+
+  if (fine) {
+    var spot = document.querySelector('.spot');
+    addEventListener('pointermove', function (e) {
+      spot.classList.add('on');
+      spot.style.setProperty('--sx', e.clientX + 'px'); spot.style.setProperty('--sy', e.clientY + 'px');
+    }, { passive: true });
+    document.querySelectorAll('.glow').forEach(function (c) {
+      c.addEventListener('pointermove', function (e) {
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+    var pt = document.querySelector('.portrait'), fr = pt && pt.querySelector('.frame');
+    if (pt && !reduce) {
+      pt.addEventListener('pointermove', function (e) {
+        var r = pt.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        fr.style.transform = 'rotateY(' + ((x - .5) * 10).toFixed(2) + 'deg) rotateX(' + ((.5 - y) * 10).toFixed(2) + 'deg) scale(1.02)';
+        fr.style.setProperty('--gx', (x * 100) + '%'); fr.style.setProperty('--gy', (y * 100) + '%');
+      });
+      pt.addEventListener('pointerleave', function () { fr.style.transform = ''; });
+    }
+  }
+
+  var bnDigits = '০১২৩৪৫৬৭৮৯';
+  function toLatin(str) { return str.replace(/[০-৯]/g, function (d) { return bnDigits.indexOf(d); }); }
+  function fmt(n) { var s = String(n); return current === 'bn' ? s.replace(/[0-9]/g, function (d) { return bnDigits[d]; }) : s; }
+  function countUp(el) {
+    if (reduce) return;
+    var final = el.innerHTML, m = toLatin(final).match(/[0-9]+/); if (!m) return;
+    var target = +m[0], start = null, dur = 1400;
+    function step(ts) {
+      if (!start) start = ts; var k = Math.min(1, (ts - start) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.innerHTML = final.replace(/[0-9০-৯]+/, fmt(Math.round(target * e)));
+      if (k < 1) requestAnimationFrame(step); else el.innerHTML = final;
+    }
+    requestAnimationFrame(step);
+    setTimeout(function () { el.innerHTML = final; }, dur + 400);
+  }
+
+  if ('IntersectionObserver' in window && !reduce) {
+    document.documentElement.classList.add('sr-on');
+    document.querySelectorAll('.services,.timeline').forEach(function (g) {
+      Array.prototype.forEach.call(g.children, function (c, i) { c.style.transitionDelay = (i % 3) * 90 + 'ms'; });
+    });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.sr').forEach(function (el) { io.observe(el); });
+    var so = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.querySelectorAll('.stat b').forEach(countUp); so.unobserve(en.target); } });
+    }, { threshold: .4 });
+    var st = document.querySelector('.stats'); if (st) so.observe(st);
+  }
+
+  var cv = document.querySelector('.sparks');
+  if (cv && cv.getContext && !reduce) {
+    var ctx = cv.getContext('2d'), W = 0, H = 0, dpr = Math.min(2, window.devicePixelRatio || 1), P = [], running = true;
+    function size() { W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+    function make(init) {
+      return { x: Math.random() * W, y: init ? Math.random() * H : H + 10, r: Math.random() * 1.6 + .4,
+        vy: -(Math.random() * .35 + .1), vx: (Math.random() - .5) * .15, a: Math.random() * Math.PI * 2,
+        c: Math.random() < .7 ? '243,211,166' : '255,90,110' };
+    }
+    size(); var N = W < 600 ? 40 : 80; for (var i = 0; i < N; i++) P.push(make(true));
+    addEventListener('resize', size);
+    function tick() {
+      if (!running) return;
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < P.length; i++) {
+        var p = P[i]; p.x += p.vx; p.y += p.vy; p.a += .03;
+        if (p.y < -10) P[i] = p = make(false);
+        var al = .25 + Math.sin(p.a) * .25 + .25;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
+        ctx.fillStyle = 'rgba(' + p.c + ',' + al.toFixed(3) + ')';
+        ctx.shadowColor = 'rgba(' + p.c + ',.8)'; ctx.shadowBlur = 6; ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { var v = es[0].isIntersecting; if (v && !running) { running = true; requestAnimationFrame(tick); } running = v; }).observe(cv);
+    }
+    requestAnimationFrame(tick);
+  }
+})();
+</script>
+</body>
+</html>
