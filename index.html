@@ -14,6 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0c0809">
 <link rel="icon" href="me.jpg">
+<link rel="apple-touch-icon" href="me.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&display=swap">
@@ -283,6 +284,71 @@ footer{overflow:hidden;position:relative}
 
 @media (hover:none){.spot{display:none}}
 @media (prefers-reduced-motion:reduce){.sparks,.spot{display:none}.track{animation:none}html.sr-on .sr{opacity:1;transform:none}}
+
+/* ===== Mobile polish ===== */
+*{-webkit-tap-highlight-color:transparent}
+.dock{display:none}
+@media (max-width:720px){
+  body{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+  .menu{display:none}
+  .brand .latin{display:inline}
+  .hero{padding-block:20px 0}
+  .hero .wrap{gap:28px}
+  .portrait{max-width:none}
+  .portrait::before{display:none}
+  .portrait .frame{aspect-ratio:1/1.02;border-radius:26px}
+  .portrait .frame img{object-position:50% 22%}
+  .badge{inset-inline-start:12px;bottom:12px;padding:10px 14px}
+  .badge b{font-size:21px}
+  .live{inset-inline-end:12px;top:12px}
+  h1{font-size:clamp(36px,11vw,48px);margin:14px 0 16px}
+  .lead{font-size:16px;margin-bottom:22px}
+  .roles{display:none}
+  .hero .ctas{display:grid;grid-template-columns:1.35fr 1fr;gap:10px}
+  .hero .btn{justify-content:center;padding:15px 12px;font-size:14.5px;border-radius:16px}
+  .stats{margin-top:28px}
+  .stat{padding:18px 16px}
+  .marquee{margin-top:44px;padding-block:14px}
+  section.block{padding-block:60px 0}
+  .head{margin-bottom:22px}
+  .about .text{font-size:16px}
+  .langs{padding:20px}
+  .job{padding:18px}
+  .job h3{font-size:18px}
+  .contact{border-radius:26px;padding:26px 20px}
+  .mail a{font-size:18px}
+  .wa-grid{max-width:none}
+  .ctas .btn-primary{width:100%;justify-content:center}
+  .socials{justify-content:center}
+  .soc-label{width:100%;text-align:center;margin:0 0 4px}
+  .soc{width:46px;height:46px;font-size:18px}
+  footer{margin-top:56px;padding-block:36px 28px}
+  footer .wrap{justify-content:center;text-align:center}
+  .aurora span:nth-child(1){width:380px;height:380px}
+  .aurora span:nth-child(2){width:320px;height:320px}
+  .aurora span:nth-child(3){width:300px;height:300px}
+  .btn:active,.wa-card:active,.soc:active,.svc:active,.copy:active{transform:scale(.97)}
+
+  .dock{display:flex;position:fixed;z-index:70;left:50%;transform:translateX(-50%);
+    bottom:calc(12px + env(safe-area-inset-bottom,0px));width:min(420px,calc(100% - 24px));
+    justify-content:space-between;align-items:flex-end;padding:8px 8px 7px;border-radius:24px;
+    background:rgba(20,12,14,.8);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+    border:1px solid var(--line);box-shadow:0 18px 40px -12px rgba(0,0,0,.85)}
+  .dock a{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;
+    color:var(--muted);font-size:10.5px;font-weight:700;padding:5px 2px;border-radius:14px;transition:color .2s,transform .15s}
+  .dock a span{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .dock .di{font-size:17px;height:20px;display:grid;place-items:center;transition:color .2s,transform .2s}
+  .dock a.on{color:var(--fg)}
+  .dock a.on .di{color:var(--gold);transform:translateY(-1px)}
+  .dock a.on::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--ruby);margin-top:-1px}
+  .dock a:active{transform:scale(.92)}
+  .dock .dwa{flex:0 0 auto;padding:0 6px;color:var(--fg)}
+  .dock .bubble{width:54px;height:54px;margin-top:-30px;border-radius:50%;display:grid;place-items:center;
+    background:linear-gradient(145deg,#2fe27a,#1faa52);color:#fff;font-size:25px;
+    box-shadow:0 10px 24px -6px rgba(37,211,102,.65),0 0 0 5px var(--bg)}
+  .dock a:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+}
+@media (max-width:720px) and (prefers-reduced-motion:reduce){.dock a:active,.btn:active{transform:none}}
 </style>
 </head>
 <body>
@@ -438,6 +504,14 @@ footer{overflow:hidden;position:relative}
   </section>
 </main>
 
+<nav class="dock" aria-label="Quick menu">
+  <a href="#top" data-spy="top" class="on"><span class="di"><i class="fa-solid fa-house"></i></span><span data-i18n="dock.home">Home</span></a>
+  <a href="#services" data-spy="services"><span class="di"><i class="fa-solid fa-layer-group"></i></span><span data-i18n="nav.services">Services</span></a>
+  <a class="dwa" href="https://wa.me/8801347970191" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="bubble"><i class="fa-brands fa-whatsapp"></i></span><span data-i18n="wa">WhatsApp</span></a>
+  <a href="#experience" data-spy="experience"><span class="di"><i class="fa-solid fa-briefcase"></i></span><span data-i18n="nav.exp">Experience</span></a>
+  <a href="#contact" data-spy="contact"><span class="di"><i class="fa-solid fa-paper-plane"></i></span><span data-i18n="nav.contact">Contact</span></a>
+</nav>
+
 <footer>
   <div class="mega latin" aria-hidden="true">JABED</div>
   <div class="wrap">
@@ -449,7 +523,7 @@ footer{overflow:hidden;position:relative}
 <script>
 var I18N = {
   bn: {
-    "nav.about":"আমার সম্পর্কে","nav.services":"সেবাসমূহ","nav.exp":"অভিজ্ঞতা","nav.contact":"যোগাযোগ",
+    "dock.home":"হোম","nav.about":"আমার সম্পর্কে","nav.services":"সেবাসমূহ","nav.exp":"অভিজ্ঞতা","nav.contact":"যোগাযোগ",
     "loc":"রিয়াদ, সৌদি আরব",
     "hero.tag":"যে মার্কেটিং বিক্রি বাড়ায়।",
     "hero.lead":"আমি <strong>বাংলাদেশের</strong> একজন ডিজিটাল মার্কেটার, ডিজাইনার ও সেলস প্রফেশনাল। <strong>৭ বছর ধরে সৌদি আরবে</strong> ব্র্যান্ড গড়ছি আর বিক্রি বাড়াচ্ছি।",
@@ -486,7 +560,7 @@ var I18N = {
     "ct.email":"ইমেইল করুন","ct.wa":"হোয়াটসঅ্যাপ · বাংলাদেশ","follow":"ফলো করুন","top":"উপরে যান ↑"
   },
   ar: {
-    "nav.about":"نبذة عني","nav.services":"الخدمات","nav.exp":"الخبرات","nav.contact":"تواصل معي",
+    "dock.home":"الرئيسية","nav.about":"نبذة عني","nav.services":"الخدمات","nav.exp":"الخبرات","nav.contact":"تواصل معي",
     "loc":"الرياض، المملكة العربية السعودية",
     "hero.tag":"تسويق يحقق المبيعات.",
     "hero.lead":"أنا مسوّق رقمي ومصمم ومحترف مبيعات من <strong>بنغلاديش</strong>، أبني العلامات التجارية وأحقق الصفقات في <strong>المملكة العربية السعودية منذ 7 سنوات</strong>.",
@@ -649,6 +723,27 @@ document.getElementById('copy-email').addEventListener('click', function () {
     }
     requestAnimationFrame(tick);
   }
+})();
+
+/* ===== Mobile dock scrollspy ===== */
+(function () {
+  var links = document.querySelectorAll('.dock a[data-spy]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('data-spy')] = a; });
+  function set(id) { links.forEach(function (a) { a.classList.toggle('on', a.getAttribute('data-spy') === id); }); }
+  var targets = [['top', document.querySelector('.hero')], ['services', document.getElementById('services')],
+                 ['experience', document.getElementById('experience')], ['contact', document.getElementById('contact')]];
+  var about = document.getElementById('about');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var id = en.target === about ? 'top' : en.target.getAttribute('data-spy-id');
+      set(id);
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  targets.forEach(function (t) { if (t[1]) { t[1].setAttribute('data-spy-id', t[0]); io.observe(t[1]); } });
+  if (about) io.observe(about);
 })();
 </script>
 </body>
