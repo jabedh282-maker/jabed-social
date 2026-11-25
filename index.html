@@ -361,6 +361,49 @@ footer{overflow:hidden;position:relative}
 }
 @media (max-width:720px) and (prefers-reduced-motion:reduce){.dock a:active,.btn:active{transform:none}}
 
+/* ===== Work ===== */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.work{appearance:none;font:inherit;color:inherit;text-align:start;cursor:pointer;display:flex;flex-direction:column;padding:0;overflow:hidden;
+  border-radius:22px;border:1px solid var(--line);background:var(--surface);transition:transform .3s,border-color .3s,box-shadow .3s}
+.work:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:0 24px 50px -28px rgba(0,0,0,.8)}
+.work:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.work .shot{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--bg-2);border-bottom:1px solid var(--line)}
+.work .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.work:hover .shot img{transform:scale(1.045)}
+.work .meta{display:flex;flex-direction:column;gap:6px;padding:18px 20px 20px}
+.work b{font-size:18px;line-height:1.3}
+.work .d{font-size:14.5px;color:var(--muted);line-height:1.5}
+.work .tools{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--gold);margin-top:4px}
+.kind{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;
+  border:1px solid var(--line);color:var(--muted)}
+.kind.real{border-color:rgba(61,220,132,.45);color:#3ddc84;background:rgba(61,220,132,.08)}
+html[lang="bn"] .kind,html[lang="ar"] .kind{letter-spacing:0;font-size:12px}
+.work-note{margin:18px 0 0;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.works{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.works{grid-template-columns:1fr;gap:14px}.work .meta{padding:16px 18px 18px}}
+html[data-skin="sky"] .work{box-shadow:0 14px 34px -24px rgba(12,74,130,.35)}
+html[data-skin="sky"] .kind.real{color:#0f8a4f;border-color:rgba(15,138,79,.4)}
+
+/* Lightbox */
+.lb{width:min(1100px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:24px;
+  background:var(--bg-2);color:var(--fg);overflow:auto;box-shadow:0 40px 100px -20px rgba(0,0,0,.9)}
+.lb::backdrop{background:rgba(5,3,4,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+html[data-skin="sky"] .lb::backdrop{background:rgba(11,37,64,.55)}
+.lb[open]{animation:lbin .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes lbin{from{opacity:0;transform:translateY(16px) scale(.98)}}
+.lb-imgs{display:flex;flex-direction:column;gap:2px;background:#000}
+.lb-imgs img{width:100%;height:auto}
+.lb-body{padding:22px 26px 26px;display:flex;flex-direction:column;gap:10px}
+.lb-body h3{margin:0;font-family:var(--font-display);font-size:clamp(20px,2.6vw,28px);line-height:1.25}
+.lb-body p{margin:0;color:var(--muted);max-width:70ch}
+.lb-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:6px}
+.lb-close{position:sticky;top:12px;float:right;margin:12px 12px -56px 0;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+  background:rgba(12,8,9,.7);color:#fff;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+[dir="rtl"] .lb-close{float:left;margin:12px 0 -56px 12px}
+.lb-close:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.lb .btn{padding:11px 18px;font-size:14px}
+.lb [hidden]{display:none!important}
+
 /* ===== Icons & a11y ===== */
 .ico{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-.125em;flex:none;overflow:visible}
 .skip{position:absolute;left:12px;top:-60px;z-index:100;padding:10px 16px;border-radius:12px;background:var(--ruby);color:#fff;font-weight:700;text-decoration:none;transition:top .2s}
@@ -445,6 +488,7 @@ html[data-skin="sky"]{scrollbar-color:#bfe3fb var(--bg)}
     <a class="brand" href="#top"><img src="me.jpg" alt="" width="34" height="34"><span class="latin">JABED</span></a>
     <nav class="menu" aria-label="Main">
       <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#services" data-i18n="nav.services">Services</a>
       <a href="#experience" data-i18n="nav.exp">Experience</a>
       <a class="menu-cta" href="#contact" data-i18n="nav.contact">Contact</a>
@@ -515,6 +559,42 @@ html[data-skin="sky"]{scrollbar-color:#bfe3fb var(--bg)}
     </div>
   </section>
 
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="head sr">
+        <div><span class="eyebrow" data-i18n="work.eb">Selected work</span><h2 data-i18n="work.h">My Work</h2></div>
+        <p data-i18n="work.p">Apps, websites, campaigns and brand design. Tap a project to see it in full.</p>
+      </div>
+      <div class="works">
+        <button class="work glow sr" type="button" data-w="barakah">
+          <span class="shot"><img src="work/barakah-t.jpg" alt="" width="800" height="500" loading="lazy" decoding="async"></span>
+          <span class="meta"><span class="kind real" data-i18n="k.own">Own project</span><b data-i18n="w.barakah.t">Barakah · Finance app</b><span class="d" data-i18n="w.barakah.d">A Bangla-first money app for Bangladeshi workers abroad.</span><span class="tools" dir="ltr">Flutter · UI/UX · Bangla UI</span></span>
+        </button>
+        <button class="work glow sr" type="button" data-w="web">
+          <span class="shot"><img src="work/web-t.jpg" alt="" width="800" height="500" loading="lazy" decoding="async"></span>
+          <span class="meta"><span class="kind real" data-i18n="k.live">Live website</span><b data-i18n="w.web.t">Portfolio &amp; link page</b><span class="d" data-i18n="w.web.d">This trilingual website with two themes, coded from scratch.</span><span class="tools" dir="ltr">HTML · CSS · JavaScript · Vercel</span></span>
+        </button>
+        <button class="work glow sr" type="button" data-w="oud">
+          <span class="shot"><img src="work/oud-t.jpg" alt="" width="800" height="500" loading="lazy" decoding="async"></span>
+          <span class="meta"><span class="kind" data-i18n="k.concept">Concept</span><b data-i18n="w.oud.t">Sahar Oud · Ramadan campaign</b><span class="d" data-i18n="w.oud.d">Social media posts in Arabic, English and Bangla for a perfume brand.</span><span class="tools" dir="ltr">Social media · Ad design</span></span>
+        </button>
+        <button class="work glow sr" type="button" data-w="coffee">
+          <span class="shot"><img src="work/coffee-t.jpg" alt="" width="800" height="500" loading="lazy" decoding="async"></span>
+          <span class="meta"><span class="kind" data-i18n="k.concept">Concept</span><b data-i18n="w.coffee.t">Hadeel Coffee · Brand identity</b><span class="d" data-i18n="w.coffee.d">Logo, colours, type and packaging for a Riyadh coffee brand.</span><span class="tools" dir="ltr">Branding · Logo · Packaging</span></span>
+        </button>
+        <button class="work glow sr" type="button" data-w="reels">
+          <span class="shot"><img src="work/reels-t.jpg" alt="" width="800" height="500" loading="lazy" decoding="async"></span>
+          <span class="meta"><span class="kind" data-i18n="k.concept">Concept</span><b data-i18n="w.reels.t">Probash Diary · Reel covers</b><span class="d" data-i18n="w.reels.d">Bangla TikTok and Reels covers for an expat-life tips series.</span><span class="tools" dir="ltr">Content · Thumbnails · Bangla</span></span>
+        </button>
+        <button class="work glow sr" type="button" data-w="menu">
+          <span class="shot"><img src="work/menu-t.jpg" alt="" width="800" height="500" loading="lazy" decoding="async"></span>
+          <span class="meta"><span class="kind" data-i18n="k.concept">Concept</span><b data-i18n="w.menu.t">Mohona Kitchen · Menu design</b><span class="d" data-i18n="w.menu.d">A Bangla, Arabic and English menu for a Bangladeshi restaurant.</span><span class="tools" dir="ltr">Print · Menu · Trilingual</span></span>
+        </button>
+      </div>
+      <p class="work-note sr" data-i18n="work.note">Concept projects are self-initiated design samples for fictional brands, not client work.</p>
+    </div>
+  </section>
+
   <section class="block" id="services">
     <div class="wrap">
       <div class="head sr">
@@ -550,9 +630,9 @@ html[data-skin="sky"]{scrollbar-color:#bfe3fb var(--bg)}
           <p data-i18n="j2.d">Managed and coordinated staff for ground handling operations at one of the Kingdom's busiest airports.</p>
         </article>
         <article class="job glow sr">
-          <div class="job-top"><h3 data-i18n="j3.t">Earlier roles</h3><span class="when" data-i18n="j3.w">Before 2019</span></div>
-          <p class="org" data-i18n="j3.o">Bangladesh &amp; Saudi Arabia</p>
-          <p data-i18n="j3.d">A range of roles in customer service, sales and operations that built my work ethic and people skills.</p>
+          <div class="job-top"><h3 data-i18n="j3.t">Studies &amp; Business</h3><span class="when" data-i18n="j3.w">Before 2019</span></div>
+          <p class="org" data-i18n="j3.o">Bangladesh</p>
+          <p data-i18n="j3.d">Completed my studies in Bangladesh while working in business, where I learned sales, negotiation and customer handling first-hand.</p>
         </article>
       </div>
     </div>
@@ -591,11 +671,24 @@ html[data-skin="sky"]{scrollbar-color:#bfe3fb var(--bg)}
 
 <nav class="dock" aria-label="Quick menu">
   <a href="#top" data-spy="top" class="on"><span class="di"><svg class="ico" aria-hidden="true"><use href="#i-house"/></svg></span><span data-i18n="dock.home">Home</span></a>
-  <a href="#services" data-spy="services"><span class="di"><svg class="ico" aria-hidden="true"><use href="#i-layer-group"/></svg></span><span data-i18n="nav.services">Services</span></a>
+  <a href="#work" data-spy="work"><span class="di"><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg></span><span data-i18n="nav.work">Work</span></a>
   <a class="dwa" href="https://wa.me/8801347970191" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="bubble"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg></span><span data-i18n="wa">WhatsApp</span></a>
-  <a href="#experience" data-spy="experience"><span class="di"><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg></span><span data-i18n="nav.exp">Experience</span></a>
+  <a href="#services" data-spy="services"><span class="di"><svg class="ico" aria-hidden="true"><use href="#i-layer-group"/></svg></span><span data-i18n="nav.services">Services</span></a>
   <a href="#contact" data-spy="contact"><span class="di"><svg class="ico" aria-hidden="true"><use href="#i-paper-plane"/></svg></span><span data-i18n="nav.contact">Contact</span></a>
 </nav>
+
+<dialog class="lb" id="lb" aria-labelledby="lb-title">
+  <button class="lb-close" type="button" id="lb-close" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="lb-imgs" id="lb-imgs"></div>
+  <div class="lb-body">
+    <span class="kind" id="lb-kind"></span>
+    <h3 id="lb-title"></h3>
+    <p id="lb-text"></p>
+    <div class="lb-row"><span class="tools" id="lb-tools" dir="ltr" style="font-size:13px;font-weight:700;color:var(--gold)"></span>
+      <a class="btn btn-ghost" id="lb-link" target="_blank" rel="noopener" hidden><span data-i18n="w.visit">Visit</span>
+        <svg class="flip" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+  </div>
+</dialog>
 
 <footer>
   <div class="mega latin" aria-hidden="true">JABED</div>
@@ -637,13 +730,29 @@ var I18N = {
     "j1.d":"এখন ৫ম বছর চলছে। একটি সিকিউরিটি পণ্যের ট্রেডিং কোম্পানিতে সেলস, ক্লায়েন্ট আর মার্কেটিং দেখাশোনা করি।",
     "j2.t":"কর্মী ব্যবস্থাপনা","j2.w":"২০১৯ – ২০২২","j2.o":"সৌদি গ্রাউন্ড সার্ভিসেস (SGS) · রিয়াদ এয়ারপোর্ট",
     "j2.d":"সৌদি আরবের অন্যতম ব্যস্ত এয়ারপোর্টে গ্রাউন্ড হ্যান্ডলিং অপারেশনের কর্মীদের ম্যানেজ ও সমন্বয় করেছি।",
-    "j3.t":"আগের কাজ","j3.w":"২০১৯-এর আগে","j3.o":"বাংলাদেশ ও সৌদি আরব",
-    "j3.d":"কাস্টমার সার্ভিস, সেলস ও অপারেশনে নানা কাজ, যা আমার কাজের নিষ্ঠা আর মানুষের সাথে মেশার দক্ষতা তৈরি করেছে।",
+    "j3.t":"পড়াশোনা ও ব্যবসা","j3.w":"২০১৯-এর আগে","j3.o":"বাংলাদেশ",
+    "j3.d":"বাংলাদেশে পড়াশোনা করেছি, পাশাপাশি ব্যবসার সাথে যুক্ত ছিলাম। সেখান থেকেই সেলস, দরদাম আর কাস্টমার সামলানো হাতে-কলমে শিখেছি।",
+    "nav.work":"কাজ","work.eb":"বাছাই করা কাজ","work.h":"আমার কাজ",
+    "work.p":"অ্যাপ, ওয়েবসাইট, ক্যাম্পেইন আর ব্র্যান্ড ডিজাইন। বড় করে দেখতে যেকোনো প্রজেক্টে ট্যাপ করুন।",
+    "work.note":"কনসেপ্ট প্রজেক্টগুলো কাল্পনিক ব্র্যান্ডের জন্য নিজের উদ্যোগে করা ডিজাইন নমুনা, ক্লায়েন্টের কাজ নয়।",
+    "k.own":"নিজস্ব প্রজেক্ট","k.live":"লাইভ ওয়েবসাইট","k.concept":"কনসেপ্ট","w.visit":"দেখুন",
+    "w.barakah.t":"বারাকাহ · ফাইন্যান্স অ্যাপ","w.barakah.d":"প্রবাসী বাংলাদেশিদের জন্য বাংলা-প্রথম টাকার হিসাবের অ্যাপ।",
+    "w.barakah.l":"Flutter দিয়ে পুরো একটি Android অ্যাপ ডিজাইন ও তৈরি করেছি। অফলাইন ও প্রাইভেট, iOS-স্টাইল ডিজাইন, হিজরি তারিখ, সৌদি ও বাংলাদেশি ব্যাংক কার্ড, দেশে টাকা পাঠানোর হিসাব, ইকামার মেয়াদের রিমাইন্ডার আর যাকাত ক্যালকুলেটর।",
+    "w.web.t":"পোর্টফোলিও ও লিংক পেজ","w.web.d":"তিন ভাষা আর দুই থিমের এই ওয়েবসাইট, শুরু থেকে নিজে কোড করা।",
+    "w.web.l":"ইংরেজি, বাংলা ও আরবিতে (ডান থেকে বামসহ) হাতে লেখা HTML ও CSS। Ruby ও Sky থিম, মোবাইলে অ্যাপের মতো মেনু, শেয়ার প্রিভিউ আর SEO। কোনো ফ্রেমওয়ার্ক ছাড়া, খুব দ্রুত।",
+    "w.oud.t":"সাহার উদ · রমজান ক্যাম্পেইন","w.oud.d":"একটি পারফিউম ব্র্যান্ডের জন্য আরবি, ইংরেজি ও বাংলায় সোশ্যাল মিডিয়া পোস্ট।",
+    "w.oud.l":"একটি কাল্পনিক পারফিউম ব্র্যান্ডের জন্য তিনটি ইনস্টাগ্রাম পোস্ট: একই ডিজাইন ভাষা গালফের আরবি, ইংরেজি ও বাংলাভাষী দর্শকদের জন্য সাজানো।",
+    "w.coffee.t":"হাদিল কফি · ব্র্যান্ড আইডেন্টিটি","w.coffee.d":"রিয়াদের একটি কফি ব্র্যান্ডের লোগো, রং, ফন্ট ও প্যাকেজিং।",
+    "w.coffee.l":"একটি কাল্পনিক স্পেশালটি কফি শপের ব্র্যান্ড আইডেন্টিটি: আরবি-ইংরেজি লোগো, রঙের প্যালেট, টাইপোগ্রাফি, কাপের স্লিভ আর বিজনেস কার্ড।",
+    "w.reels.t":"প্রবাস ডায়েরি · রিল কভার","w.reels.d":"প্রবাস জীবনের টিপস সিরিজের জন্য বাংলা টিকটক ও রিলস কভার।",
+    "w.reels.l":"সৌদি আরবে প্রবাস জীবন নিয়ে একটি বাংলা শর্ট ভিডিও সিরিজের কভার: বড় হেডলাইন, সিরিজ ব্যাজ আর প্রতি পর্বে আলাদা রং, যাতে ফিডে দেখেই চেনা যায়।",
+    "w.menu.t":"মোহনা কিচেন · মেনু ডিজাইন","w.menu.d":"একটি বাংলাদেশি রেস্টুরেন্টের জন্য বাংলা, আরবি ও ইংরেজি মেনু।",
+    "w.menu.l":"রিয়াদের একটি কাল্পনিক বাংলাদেশি রেস্টুরেন্টের মেনু ও অফার ডিজাইন, যা বাংলাদেশি, আরব ও ইংরেজিভাষী সবাই সহজে পড়তে পারে।",
     "ct.h":"কোনো প্রজেক্ট আছে? চলুন কথা বলি।",
     "ct.p":"ডিজাইন, ভিডিও, মার্কেটিং প্ল্যান বা ওয়েবসাইট লাগবে? ইমেইল বা হোয়াটসঅ্যাপে মেসেজ দিন।",
     "copy":"কপি","copied":"কপি হয়েছে","selected":"সিলেক্ট হয়েছে",
     "ct.email":"ইমেইল করুন","ct.wa":"হোয়াটসঅ্যাপ · বাংলাদেশ","follow":"ফলো করুন","top":"উপরে যান ↑",
-    "skip":"মূল অংশে যান","title":"মেহেদী এইচ জাবেদ · ডিজিটাল মার্কেটার ও ডিজাইনার, রিয়াদ"
+    "skip":"মূল অংশে যান","close":"বন্ধ করুন","title":"মেহেদী এইচ জাবেদ · ডিজিটাল মার্কেটার ও ডিজাইনার, রিয়াদ"
   },
   ar: {
     "dock.home":"الرئيسية","nav.about":"نبذة عني","nav.services":"الخدمات","nav.exp":"الخبرات","nav.contact":"تواصل معي",
@@ -675,15 +784,37 @@ var I18N = {
     "j1.d":"في سنتي الخامسة الآن. أتولى المبيعات والعملاء والتسويق في شركة لتجارة منتجات الأمن.",
     "j2.t":"إدارة الموظفين","j2.w":"2019 – 2022","j2.o":"الشركة السعودية للخدمات الأرضية (SGS) · مطار الرياض",
     "j2.d":"أدرت ونسّقت فرق العمل في عمليات الخدمات الأرضية في أحد أكثر مطارات المملكة ازدحامًا.",
-    "j3.t":"أعمال سابقة","j3.w":"قبل 2019","j3.o":"بنغلاديش والسعودية",
-    "j3.d":"أدوار متنوعة في خدمة العملاء والمبيعات والعمليات صقلت أخلاقيات عملي ومهاراتي في التعامل مع الناس.",
+    "j3.t":"الدراسة والأعمال","j3.w":"قبل 2019","j3.o":"بنغلاديش",
+    "j3.d":"أكملت دراستي في بنغلاديش وعملت في الوقت نفسه في مجال الأعمال، حيث تعلّمت المبيعات والتفاوض والتعامل مع العملاء بشكل عملي.",
+    "nav.work":"أعمالي","work.eb":"أعمال مختارة","work.h":"أعمالي",
+    "work.p":"تطبيقات ومواقع وحملات وتصميم هويات. اضغط على أي مشروع لعرضه كاملًا.",
+    "work.note":"المشاريع المفاهيمية نماذج تصميم بمبادرة شخصية لعلامات تجارية خيالية، وليست أعمالًا لعملاء.",
+    "k.own":"مشروع شخصي","k.live":"موقع منشور","k.concept":"تصميم مفاهيمي","w.visit":"زيارة",
+    "w.barakah.t":"بركة · تطبيق مالي","w.barakah.d":"تطبيق لإدارة المال باللغة البنغالية للعمال البنغلاديشيين في الخارج.",
+    "w.barakah.l":"صممت وبنيت تطبيق أندرويد كاملًا باستخدام Flutter: يعمل دون اتصال ويحفظ الخصوصية، بتصميم على طراز iOS، مع التاريخ الهجري، وبطاقات البنوك السعودية والبنغلاديشية، وتتبع التحويلات، وتنبيهات انتهاء الإقامة، وحاسبة الزكاة.",
+    "w.web.t":"ملف الأعمال وصفحة الروابط","w.web.d":"هذا الموقع بثلاث لغات وتصميمين، مبرمج من الصفر.",
+    "w.web.l":"HTML وCSS مكتوبة يدويًا بالإنجليزية والبنغالية والعربية (من اليمين لليسار)، مع تصميمَي Ruby وSky، وقائمة سفلية بأسلوب التطبيقات، ومعاينات مشاركة وتحسين لمحركات البحث. سريع وبدون أطر عمل.",
+    "w.oud.t":"سحر عود · حملة رمضان","w.oud.d":"منشورات تواصل اجتماعي بالعربية والإنجليزية والبنغالية لعلامة عطور.",
+    "w.oud.l":"ثلاثة منشورات إنستغرام لعلامة عطور خيالية: نظام بصري واحد مُكيَّف للجمهور العربي والإنجليزي والبنغالي في الخليج.",
+    "w.coffee.t":"قهوة هديل · هوية بصرية","w.coffee.d":"شعار وألوان وخطوط وتغليف لعلامة قهوة في الرياض.",
+    "w.coffee.l":"هوية بصرية لمقهى قهوة مختصة خيالي: شعار عربي وإنجليزي، ولوحة ألوان، وخطوط، وغلاف كوب، وبطاقة عمل.",
+    "w.reels.t":"يوميات الغربة · أغلفة ريلز","w.reels.d":"أغلفة تيك توك وريلز بالبنغالية لسلسلة نصائح عن حياة المغترب.",
+    "w.reels.l":"أغلفة لسلسلة فيديوهات قصيرة بالبنغالية عن الحياة في السعودية: عناوين بارزة، وشارة للسلسلة، ولون مختلف لكل حلقة ليسهل تمييزها في الصفحة الرئيسية.",
+    "w.menu.t":"مطبخ موهونا · تصميم قائمة طعام","w.menu.d":"قائمة طعام بالبنغالية والعربية والإنجليزية لمطعم بنغلاديشي.",
+    "w.menu.l":"تصميم قائمة طعام وعرض ترويجي لمطعم بنغلاديشي خيالي في الرياض، سهلة القراءة للزبائن البنغلاديشيين والعرب والناطقين بالإنجليزية.",
     "ct.h":"لديك مشروع؟ لنتحدث.",
     "ct.p":"تحتاج تصميمًا أو فيديو أو خطة تسويق أو موقعًا إلكترونيًا؟ راسلني عبر البريد الإلكتروني أو واتساب.",
     "copy":"نسخ","copied":"تم النسخ","selected":"تم التحديد",
     "ct.email":"راسلني بالبريد","ct.wa":"واتساب · بنغلاديش","follow":"تابعني","top":"العودة للأعلى ↑",
-    "skip":"انتقل إلى المحتوى","title":"مهدي ه. جابد · مسوّق رقمي ومصمم في الرياض"
+    "skip":"انتقل إلى المحتوى","close":"إغلاق","title":"مهدي ه. جابد · مسوّق رقمي ومصمم في الرياض"
   },
-  en: { copied:"Copied", selected:"Selected", title:"Mehedi H Jabed · Digital Marketer & Designer in Riyadh" }
+  en: { copied:"Copied", selected:"Selected", "w.barakah.l":"Designed and built a complete Android app with Flutter. Offline and private, with an iOS-style interface, Hijri dates, Saudi and Bangladeshi bank cards, remittance tracking, Iqama expiry alerts and a Zakat calculator.",
+    "w.web.l":"Hand-coded HTML and CSS in English, Bangla and Arabic (right-to-left), with Ruby and Sky themes, an app-style mobile menu, share previews and SEO. Fast, with no frameworks.",
+    "w.oud.l":"A three-post Instagram set for a fictional perfume brand: one visual system adapted for Arabic, English and Bangla audiences in the Gulf.",
+    "w.coffee.l":"A brand identity for a fictional specialty coffee shop: bilingual Arabic and English logo, colour palette, typography, cup sleeve and business card.",
+    "w.reels.l":"Covers for a Bangla short-video series about life in Saudi Arabia: bold headlines, a series badge and a colour per episode so viewers recognise it in the feed.",
+    "w.menu.l":"Menu and promo design for a fictional Bangladeshi restaurant in Riyadh, easy to read for Bangladeshi, Arab and English-speaking customers.",
+    "w.visit":"Visit", close:"Close", title:"Mehedi H Jabed · Digital Marketer & Designer in Riyadh" }
 };
 var nodes = document.querySelectorAll('[data-i18n]');
 nodes.forEach(function (el) { var k = el.getAttribute('data-i18n'); if (!(k in I18N.en)) I18N.en[k] = el.innerHTML; });
@@ -769,7 +900,7 @@ document.getElementById('copy-email').addEventListener('click', function () {
 
   if ('IntersectionObserver' in window && !reduce) {
     document.documentElement.classList.add('sr-on');
-    document.querySelectorAll('.services,.timeline').forEach(function (g) {
+    document.querySelectorAll('.services,.timeline,.works').forEach(function (g) {
       Array.prototype.forEach.call(g.children, function (c, i) { c.style.transitionDelay = (i % 3) * 90 + 'ms'; });
     });
     var io = new IntersectionObserver(function (es) {
@@ -837,6 +968,40 @@ document.getElementById('copy-email').addEventListener('click', function () {
   label();
 })();
 
+/* ===== Work lightbox ===== */
+(function () {
+  var WORK = {
+    barakah: { kind: 'own', imgs: [{s:'work/barakah.jpg',w:1600,h:867}, {s:'work/barakah-2.jpg',w:1600,h:707}], tools: 'Flutter · Dart · UI/UX · Bangla UI' },
+    web: { kind: 'live', imgs: [{s:'work/web.jpg',w:1600,h:1000}], tools: 'HTML · CSS · JavaScript · Vercel', link: 'https://jabed-social.vercel.app/links' },
+    oud: { kind: 'concept', imgs: [{s:'work/oud.jpg',w:1600,h:1000}], tools: 'Social media · Ad design · Arabic · Bangla' },
+    coffee: { kind: 'concept', imgs: [{s:'work/coffee.jpg',w:1600,h:1000}], tools: 'Branding · Logo · Packaging' },
+    reels: { kind: 'concept', imgs: [{s:'work/reels.jpg',w:1600,h:1000}], tools: 'Content creation · Thumbnails · Bangla' },
+    menu: { kind: 'concept', imgs: [{s:'work/menu.jpg',w:1600,h:1000}], tools: 'Print design · Menu · Trilingual' }
+  };
+  var lb = document.getElementById('lb');
+  if (!lb || typeof lb.showModal !== 'function') return;
+  var imgs = document.getElementById('lb-imgs'), kind = document.getElementById('lb-kind'), link = document.getElementById('lb-link');
+  var lastBtn = null;
+  function open(key) {
+    var w = WORK[key]; if (!w) return;
+    imgs.innerHTML = '';
+    w.imgs.forEach(function (o) { var im = new Image(o.w, o.h); im.src = o.s; im.alt = t('w.' + key + '.t').replace(/&amp;/g, '&'); imgs.appendChild(im); });
+    kind.textContent = t('k.' + w.kind); kind.className = 'kind' + (w.kind === 'concept' ? '' : ' real');
+    document.getElementById('lb-title').textContent = t('w.' + key + '.t').replace(/&amp;/g, '&');
+    document.getElementById('lb-text').textContent = t('w.' + key + '.l');
+    document.getElementById('lb-tools').textContent = w.tools;
+    document.getElementById('lb-close').setAttribute('aria-label', t('close'));
+    if (w.link) { link.href = w.link; link.hidden = false; } else { link.hidden = true; }
+    lb.showModal(); lb.scrollTop = 0;
+  }
+  document.querySelectorAll('.work').forEach(function (b) {
+    b.addEventListener('click', function () { lastBtn = b; open(b.getAttribute('data-w')); });
+  });
+  document.getElementById('lb-close').addEventListener('click', function () { lb.close(); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+  lb.addEventListener('close', function () { if (lastBtn) lastBtn.focus(); });
+})();
+
 /* ===== Mobile dock scrollspy ===== */
 (function () {
   var links = document.querySelectorAll('.dock a[data-spy]');
@@ -844,8 +1009,8 @@ document.getElementById('copy-email').addEventListener('click', function () {
   var map = {};
   links.forEach(function (a) { map[a.getAttribute('data-spy')] = a; });
   function set(id) { links.forEach(function (a) { a.classList.toggle('on', a.getAttribute('data-spy') === id); }); }
-  var targets = [['top', document.querySelector('.hero')], ['services', document.getElementById('services')],
-                 ['experience', document.getElementById('experience')], ['contact', document.getElementById('contact')]];
+  var targets = [['top', document.querySelector('.hero')], ['work', document.getElementById('work')], ['services', document.getElementById('services')],
+                 ['services', document.getElementById('experience')], ['contact', document.getElementById('contact')]];
   var about = document.getElementById('about');
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (en) {
