@@ -9,6 +9,7 @@ Personal portfolio and link page, live at **https://jabed-social.vercel.app**
 | `404.html` | Not-found page |
 | `me.jpg` | Profile photo |
 | `work/` | Project images for the Work section (`*-t.jpg` are thumbnails) |
+| `work/logos/` | Brand logos for the Products I know section, shown in one colour |
 | `work/enma/` | Enma Security posts and Reels (videos compressed to 720p for the web) |
 | `Mehedi-H-Jabed-CV.pdf` | One-page CV, linked from the Download CV buttons |
 | `og.jpg` | 1200×630 preview image for WhatsApp, Facebook and X |

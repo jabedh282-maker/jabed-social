@@ -207,6 +207,18 @@ html[data-skin="sky"] .kb-tags li{background:#fff}
 .kb-card.main p{margin-bottom:20px}
 @media (max-width:960px){.kb{grid-template-columns:1fr}}
 
+.kb-logos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 18px;padding:0;list-style:none}
+.kb-logos li{height:72px;display:grid;place-items:center;padding:0 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+html[data-skin="sky"] .kb-logos li{background:#fff}
+.lg{display:block;width:100%;height:var(--h,28px);background:var(--fg);opacity:.92;-webkit-mask:var(--l) center/contain no-repeat;mask:var(--l) center/contain no-repeat}
+.kb-card:hover .lg{opacity:1}
+.tm-note{margin:18px 0 0;font-size:12.5px;color:var(--muted)}
+.socials a .sb{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:14px;flex:none}
+.sb.fb{background:#0866ff}
+.sb.ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+.sb.tt{background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.sb.tt .ico{filter:drop-shadow(-1.2px -1px 0 #25f4ee) drop-shadow(1.2px 1px 0 #fe2c55)}
+.sb.sc{background:#fffc00;color:#000}
 .about{display:grid;grid-template-columns:1.25fr .75fr;gap:24px}
 .about .text{font-size:17px;color:var(--muted)}
 .about .text p{margin:0 0 16px;max-width:62ch}
@@ -397,21 +409,22 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
       <div class="kb">
         <article class="card kb-card main">
           <div class="kb-top"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-cctv"/></svg></div><h3 data-i18n="kb1.h">Security cameras &amp; intercoms</h3></div>
-          <ul class="kb-tags" dir="ltr"><li>Hikvision</li><li>Dahua</li><li>EZVIZ</li><li>Imou</li></ul>
+          <ul class="kb-logos" dir="ltr"><li><span class="lg" role="img" aria-label="Hikvision" style="--l:url(work/logos/hikvision.svg);--h:22px"></span></li><li><span class="lg" role="img" aria-label="Dahua" style="--l:url(work/logos/dahua.svg);--h:34px"></span></li><li><span class="lg" role="img" aria-label="EZVIZ" style="--l:url(work/logos/ezviz.png);--h:26px"></span></li><li><span class="lg" role="img" aria-label="Imou" style="--l:url(work/logos/imou.png);--h:22px"></span></li></ul>
           <p data-i18n="kb1.p">Indoor, outdoor and pan-tilt cameras, colour night vision, solar and 4G cameras for sites without power, NVR recording and video intercom kits.</p>
           <div class="kb-uses"><span data-i18n="u.home">Homes</span><span data-i18n="u.shop">Shops</span><span data-i18n="u.office">Offices</span><span data-i18n="u.farm">Farms &amp; istirahas</span></div>
         </article>
         <article class="card kb-card">
           <div class="kb-top"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg></div><h3 data-i18n="kb2.h">Networking &amp; Wi-Fi</h3></div>
-          <ul class="kb-tags" dir="ltr"><li>TP-Link</li><li>Ruijie</li><li>Grandstream</li></ul>
+          <ul class="kb-logos" dir="ltr"><li><span class="lg" role="img" aria-label="TP-Link" style="--l:url(work/logos/tplink.png);--h:36px"></span></li><li><span class="lg" role="img" aria-label="Ruijie" style="--l:url(work/logos/ruijie.png);--h:26px"></span></li><li><span class="lg" role="img" aria-label="Grandstream" style="--l:url(work/logos/grandstream.svg);--h:52px"></span></li></ul>
           <p data-i18n="kb2.p">Routers, range extenders and Wi-Fi access points for homes, shops and offices.</p>
         </article>
         <article class="card kb-card">
           <div class="kb-top"><div class="ic"><svg class="ico" aria-hidden="true"><use href="#i-handshake"/></svg></div><h3 data-i18n="kb3.h">Also</h3></div>
-          <ul class="kb-tags" dir="ltr"><li>Visio</li><li>KMC</li></ul>
+          <ul class="kb-tags" dir="ltr"><li>Visio</li><li>KMC</li><li>Smartlink</li><li>Fujistar</li></ul>
           <p data-i18n="kb3.p">Explaining features, prices and installation options so customers buy what fits their place and budget.</p>
         </article>
       </div>
+      <p class="tm-note" data-i18n="tm">Brand names and logos belong to their owners and are shown to list the products I sell.</p>
     </div>
   </section>
 
@@ -473,10 +486,10 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
       </div>
       <div class="socials">
         <span class="soc-label" data-i18n="follow">Social</span>
-        <a href="https://www.facebook.com/share/1ERb8BcRgr/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-facebook-f"/></svg>Facebook</a>
-        <a href="https://www.instagram.com/mehedihjabed.25" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a>
-        <a href="https://www.tiktok.com/@mehedi.h.jabed" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg>TikTok</a>
-        <a href="https://www.snapchat.com/add/mehedi.jabed" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-snapchat"/></svg>Snapchat</a>
+        <a href="https://www.facebook.com/share/1ERb8BcRgr/" target="_blank" rel="noopener"><span class="sb fb"><svg class="ico" aria-hidden="true"><use href="#i-facebook-f"/></svg></span>Facebook</a>
+        <a href="https://www.instagram.com/mehedihjabed.25" target="_blank" rel="noopener"><span class="sb ig"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></span>Instagram</a>
+        <a href="https://www.tiktok.com/@mehedi.h.jabed" target="_blank" rel="noopener"><span class="sb tt"><svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg></span>TikTok</a>
+        <a href="https://www.snapchat.com/add/mehedi.jabed" target="_blank" rel="noopener"><span class="sb sc"><svg class="ico" aria-hidden="true"><use href="#i-snapchat"/></svg></span>Snapchat</a>
       </div>
     </div>
   </section>
@@ -535,7 +548,7 @@ var I18N = {
     "br.h":"যে পণ্যগুলো ভালো জানি","br.p":"২০২২ থেকে রিয়াদে Enma Security-র দোকানে এই ব্র্যান্ডগুলো বিক্রি করছি। বাসা, দোকান, অফিস বা খামারের জন্য কোন ক্যামেরা বা Wi-Fi সেটআপ ঠিক হবে, কাস্টমারকে তা বেছে নিতে সাহায্য করি।",
     "kb1.h":"সিকিউরিটি ক্যামেরা ও ইন্টারকম","kb1.p":"ইনডোর, আউটডোর ও ঘোরানো যায় এমন ক্যামেরা, রঙিন নাইট ভিশন, বিদ্যুৎ নেই এমন জায়গার জন্য সোলার ও 4G ক্যামেরা, NVR রেকর্ডিং আর ভিডিও ইন্টারকম কিট।",
     "kb2.h":"নেটওয়ার্কিং ও Wi-Fi","kb2.p":"বাসা, দোকান ও অফিসের জন্য রাউটার, রেঞ্জ এক্সটেন্ডার আর Wi-Fi অ্যাক্সেস পয়েন্ট।",
-    "kb3.h":"আরও","u.home":"বাসা","u.shop":"দোকান","u.office":"অফিস","u.farm":"খামার ও ইস্তিরাহা","kb3.p":"ফিচার, দাম আর ইনস্টলেশনের অপশন বুঝিয়ে বলি, যাতে কাস্টমার তার জায়গা আর বাজেট অনুযায়ী ঠিক জিনিসটা কেনেন।",
+    "kb3.h":"আরও","u.home":"বাসা","u.shop":"দোকান","u.office":"অফিস","u.farm":"খামার ও ইস্তিরাহা","tm":"ব্র্যান্ডের নাম ও লোগো তাদের মালিকদের। আমি যে পণ্যগুলো বিক্রি করি তা দেখাতে এখানে ব্যবহার করা হয়েছে।","kb3.p":"ফিচার, দাম আর ইনস্টলেশনের অপশন বুঝিয়ে বলি, যাতে কাস্টমার তার জায়গা আর বাজেট অনুযায়ী ঠিক জিনিসটা কেনেন।",
     "s.mkt":"ডিজিটাল মার্কেটিং","s.gd":"গ্রাফিক ডিজাইন","s.vid":"ভিডিও এডিটিং","s.cc":"কনটেন্ট ক্রিয়েশন","s.web":"ওয়েবসাইট","s.sales":"সেলস",
     "s.mkt.p":"কনটেন্ট প্ল্যান, Meta ও TikTok অ্যাড, আর প্রতিটি ক্যাম্পেইন থেকে কী ফল এল তার ছোট রিপোর্ট।",
     "s.gd.p":"সোশ্যাল পোস্ট, লোগো, মেনু আর প্রিন্ট ডিজাইন, আরবি, ইংরেজি ও বাংলায়।",
@@ -587,7 +600,7 @@ var I18N = {
     "br.h":"منتجات أعرفها جيدًا","br.p":"منذ 2022 أبيع هذه العلامات في متجر <bdi dir=\"ltr\">Enma Security</bdi> بالرياض، وأساعد العملاء في اختيار الكاميرا أو إعداد Wi-Fi المناسب للمنزل أو المحل أو المكتب أو المزرعة.",
     "kb1.h":"كاميرات المراقبة والاتصال الداخلي","kb1.p":"كاميرات داخلية وخارجية ومتحركة، ورؤية ليلية بالألوان، وكاميرات بالطاقة الشمسية و4G للمواقع بلا كهرباء، وتسجيل NVR، وأطقم الاتصال الداخلي بالفيديو.",
     "kb2.h":"الشبكات وWi-Fi","kb2.p":"راوترات وموسعات تغطية ونقاط وصول Wi-Fi للمنازل والمحلات والمكاتب.",
-    "kb3.h":"أيضًا","u.home":"المنازل","u.shop":"المحلات","u.office":"المكاتب","u.farm":"المزارع والاستراحات","kb3.p":"أشرح المزايا والأسعار وخيارات التركيب ليشتري العميل ما يناسب مكانه وميزانيته.",
+    "kb3.h":"أيضًا","u.home":"المنازل","u.shop":"المحلات","u.office":"المكاتب","u.farm":"المزارع والاستراحات","tm":"أسماء العلامات التجارية وشعاراتها مملوكة لأصحابها، وتُعرض هنا لبيان المنتجات التي أبيعها.","kb3.p":"أشرح المزايا والأسعار وخيارات التركيب ليشتري العميل ما يناسب مكانه وميزانيته.",
     "s.mkt":"التسويق الرقمي","s.gd":"التصميم الجرافيكي","s.vid":"مونتاج الفيديو","s.cc":"صناعة المحتوى","s.web":"المواقع الإلكترونية","s.sales":"المبيعات",
     "s.mkt.p":"خطط محتوى، وإعلانات Meta وTikTok، وتقرير مختصر بنتائج كل حملة.",
     "s.gd.p":"منشورات وشعارات وقوائم طعام ومطبوعات بالعربية والإنجليزية والبنغالية.",
