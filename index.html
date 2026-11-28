@@ -140,10 +140,12 @@ h2{font-size:clamp(30px,4vw,42px);line-height:1.1;margin:0}
 @media (max-width:900px){.services{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.services{grid-template-columns:1fr}}
 
-.brands{display:grid;grid-template-columns:repeat(3,1fr);margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
-.brands li{padding:22px 4px;border-bottom:1px solid var(--line);font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-.01em}
-@media (min-width:900px){.brands{grid-template-columns:repeat(5,1fr)}}
-html[lang="bn"] .brands li,html[lang="ar"] .brands li{font-family:"Newsreader",Georgia,serif}
+.kb{display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px}
+.kb-col{padding:22px 0 26px;border-top:1px solid var(--line)}
+.kb-col h3{margin:0 0 8px;font-size:21px}
+.kb-br{margin:0 0 8px;font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:19px;color:var(--accent)}
+.kb-col p:last-child{margin:0;color:var(--muted);font-size:15.5px}
+@media (max-width:900px){.kb{grid-template-columns:1fr}}
 .about{display:grid;grid-template-columns:1.4fr .6fr;gap:64px}
 .about .text p{margin:0 0 18px;max-width:62ch}
 .about .text strong{font-weight:600}
@@ -318,10 +320,26 @@ html[lang="bn"] h2,html[lang="ar"] h2,html[lang="bn"] h3,html[lang="ar"] h3{lett
   <section class="block" id="brands">
     <div class="wrap">
       <div class="head">
-        <h2 data-i18n="br.h">Brands I sell</h2>
-        <p data-i18n="br.p">Security cameras, intercoms and networking products I sell at Enma Security.</p>
+        <h2 data-i18n="br.h">Products I know</h2>
+        <p data-i18n="br.p">Since 2022 I've sold these brands at Enma Security's store in Riyadh, helping customers pick the right camera or Wi-Fi setup for a home, shop, office or farm.</p>
       </div>
-      <ul class="brands" dir="ltr"><li>Hikvision</li><li>Dahua</li><li>EZVIZ</li><li>Imou</li><li>TP-Link</li><li>Grandstream</li><li>Ruijie</li><li>Visio</li><li>KMC</li></ul>
+      <div class="kb">
+        <div class="kb-col">
+          <h3 data-i18n="kb1.h">Security cameras &amp; intercoms</h3>
+          <p class="kb-br" dir="ltr">Hikvision · Dahua · EZVIZ · Imou</p>
+          <p data-i18n="kb1.p">Indoor, outdoor and pan-tilt cameras, colour night vision, solar and 4G cameras for sites without power, NVR recording and video intercom kits.</p>
+        </div>
+        <div class="kb-col">
+          <h3 data-i18n="kb2.h">Networking &amp; Wi-Fi</h3>
+          <p class="kb-br" dir="ltr">TP-Link · Ruijie · Grandstream</p>
+          <p data-i18n="kb2.p">Routers, range extenders and Wi-Fi access points for homes, shops and offices.</p>
+        </div>
+        <div class="kb-col">
+          <h3 data-i18n="kb3.h">Also</h3>
+          <p class="kb-br" dir="ltr">Visio · KMC</p>
+          <p data-i18n="kb3.p">Explaining features, prices and installation options so customers buy what fits their place and budget.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -445,7 +463,10 @@ var I18N = {
     "w.menu.t":"মোহনা কিচেন · মেনু ডিজাইন","w.menu.d":"একটি বাংলাদেশি রেস্টুরেন্টের জন্য বাংলা, আরবি ও ইংরেজি মেনু।",
     "w.menu.l":"রিয়াদের একটি কাল্পনিক বাংলাদেশি রেস্টুরেন্টের মেনু ও অফার ডিজাইন, যা বাংলাদেশি, আরব ও ইংরেজিভাষী সবাই সহজে পড়তে পারে।",
     "svc.p":"যে কাজগুলো আমি একা বা আপনার টিমের সাথে করতে পারি।",
-    "br.h":"যে ব্র্যান্ডগুলো বিক্রি করি","br.p":"Enma Security-তে যে সিকিউরিটি ক্যামেরা, ইন্টারকম আর নেটওয়ার্কিং পণ্য বিক্রি করি।",
+    "br.h":"যে পণ্যগুলো ভালো জানি","br.p":"২০২২ থেকে রিয়াদে Enma Security-র দোকানে এই ব্র্যান্ডগুলো বিক্রি করছি। বাসা, দোকান, অফিস বা খামারের জন্য কোন ক্যামেরা বা Wi-Fi সেটআপ ঠিক হবে, কাস্টমারকে তা বেছে নিতে সাহায্য করি।",
+    "kb1.h":"সিকিউরিটি ক্যামেরা ও ইন্টারকম","kb1.p":"ইনডোর, আউটডোর ও ঘোরানো যায় এমন ক্যামেরা, রঙিন নাইট ভিশন, বিদ্যুৎ নেই এমন জায়গার জন্য সোলার ও 4G ক্যামেরা, NVR রেকর্ডিং আর ভিডিও ইন্টারকম কিট।",
+    "kb2.h":"নেটওয়ার্কিং ও Wi-Fi","kb2.p":"বাসা, দোকান ও অফিসের জন্য রাউটার, রেঞ্জ এক্সটেন্ডার আর Wi-Fi অ্যাক্সেস পয়েন্ট।",
+    "kb3.h":"আরও","kb3.p":"ফিচার, দাম আর ইনস্টলেশনের অপশন বুঝিয়ে বলি, যাতে কাস্টমার তার জায়গা আর বাজেট অনুযায়ী ঠিক জিনিসটা কেনেন।",
     "s.mkt":"ডিজিটাল মার্কেটিং","s.gd":"গ্রাফিক ডিজাইন","s.vid":"ভিডিও এডিটিং","s.cc":"কনটেন্ট ক্রিয়েশন","s.web":"ওয়েবসাইট","s.sales":"সেলস",
     "s.mkt.p":"কনটেন্ট প্ল্যান, Meta ও TikTok অ্যাড, আর প্রতিটি ক্যাম্পেইন থেকে কী ফল এল তার ছোট রিপোর্ট।",
     "s.gd.p":"সোশ্যাল পোস্ট, লোগো, মেনু আর প্রিন্ট ডিজাইন, আরবি, ইংরেজি ও বাংলায়।",
@@ -494,7 +515,10 @@ var I18N = {
     "w.menu.t":"مطبخ موهونا · تصميم قائمة طعام","w.menu.d":"قائمة طعام بالبنغالية والعربية والإنجليزية لمطعم بنغلاديشي.",
     "w.menu.l":"تصميم قائمة طعام وعرض ترويجي لمطعم بنغلاديشي خيالي في الرياض، سهلة القراءة للزبائن البنغلاديشيين والعرب والناطقين بالإنجليزية.",
     "svc.p":"ما يمكنني تنفيذه بمفردي أو ضمن فريقك.",
-    "br.h":"العلامات التجارية التي أبيعها","br.p":"كاميرات المراقبة وأنظمة الاتصال الداخلي ومنتجات الشبكات التي أبيعها لدى <bdi dir=\"ltr\">Enma Security</bdi>.",
+    "br.h":"منتجات أعرفها جيدًا","br.p":"منذ 2022 أبيع هذه العلامات في متجر <bdi dir=\"ltr\">Enma Security</bdi> بالرياض، وأساعد العملاء في اختيار الكاميرا أو إعداد Wi-Fi المناسب للمنزل أو المحل أو المكتب أو المزرعة.",
+    "kb1.h":"كاميرات المراقبة والاتصال الداخلي","kb1.p":"كاميرات داخلية وخارجية ومتحركة، ورؤية ليلية بالألوان، وكاميرات بالطاقة الشمسية و4G للمواقع بلا كهرباء، وتسجيل NVR، وأطقم الاتصال الداخلي بالفيديو.",
+    "kb2.h":"الشبكات وWi-Fi","kb2.p":"راوترات وموسعات تغطية ونقاط وصول Wi-Fi للمنازل والمحلات والمكاتب.",
+    "kb3.h":"أيضًا","kb3.p":"أشرح المزايا والأسعار وخيارات التركيب ليشتري العميل ما يناسب مكانه وميزانيته.",
     "s.mkt":"التسويق الرقمي","s.gd":"التصميم الجرافيكي","s.vid":"مونتاج الفيديو","s.cc":"صناعة المحتوى","s.web":"المواقع الإلكترونية","s.sales":"المبيعات",
     "s.mkt.p":"خطط محتوى، وإعلانات Meta وTikTok، وتقرير مختصر بنتائج كل حملة.",
     "s.gd.p":"منشورات وشعارات وقوائم طعام ومطبوعات بالعربية والإنجليزية والبنغالية.",
