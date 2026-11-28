@@ -126,7 +126,12 @@ html[lang="bn"] .eyebrow,html[lang="ar"] .eyebrow{letter-spacing:0;font-size:14p
 h1,h2,h3{text-wrap:balance}
 h1{font-family:"Unbounded","Arial Black",system-ui,sans-serif;font-weight:700;font-size:clamp(38px,5.2vw,66px);line-height:1.02;letter-spacing:-.03em;margin:0 0 22px}
 .lead{font-size:clamp(16px,1.8vw,19px);color:var(--muted);max-width:46ch;margin:0 0 32px}
-@media (min-width:1100px){h1 .latin{white-space:nowrap}}
+@media (min-width:1100px){h1 .nm{white-space:nowrap}}
+html[lang="bn"] h1,html[lang="ar"] h1{letter-spacing:0;line-height:1.2}
+html[lang="bn"] h1 .nm{font-family:"Hind Siliguri",system-ui,sans-serif;font-weight:700;font-size:1.12em}
+html[lang="ar"] h1 .nm{font-family:"Cairo",system-ui,sans-serif;font-weight:700;font-size:1.08em}
+html[lang="bn"] .brand{font-family:"Hind Siliguri",system-ui,sans-serif;font-size:17px;letter-spacing:0}
+html[lang="ar"] .brand{font-family:"Cairo",system-ui,sans-serif;font-size:17px;letter-spacing:0}
 .lead strong{color:var(--fg);font-weight:600}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:15px;padding:14px 22px;border-radius:14px;transition:transform .2s,box-shadow .2s,background .2s}
@@ -318,7 +323,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top" dir="ltr">Mehedi H Jabed</a>
+    <a class="brand" href="#top" data-i18n="name">Mehedi H Jabed</a>
     <nav class="menu" aria-label="Main">
       <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#services" data-i18n="nav.services">Services</a>
@@ -340,7 +345,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow" data-i18n="hero.eb">Marketing, design &amp; sales · Riyadh</p>
-        <h1><span class="latin" dir="ltr">Mehedi H&nbsp;Jabed</span></h1>
+        <h1><span class="nm" data-i18n="name">Mehedi H&nbsp;Jabed</span></h1>
         <p class="lead" data-i18n="hero.lead">I work in sales and marketing at <strong>Enma Security Trading Co.</strong> in Riyadh. Alongside that I design social posts, edit short videos and build simple websites.</p>
         <div class="ctas">
           <a class="btn btn-primary" href="#work" data-i18n="cta.see">See my work</a>
@@ -529,7 +534,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr">2026</span> <span dir="ltr">Mehedi H Jabed</span> · <span data-i18n="loc">Riyadh, Saudi Arabia</span></span>
+    <span>© <span id="yr">2026</span> <span data-i18n="name">Mehedi H Jabed</span> · <span data-i18n="loc">Riyadh, Saudi Arabia</span></span>
     <a href="#top" data-i18n="top">Back to top ↑</a>
   </div>
 </footer>
@@ -537,7 +542,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
 <script>
 var I18N = {
   bn: {
-    "title":"মেহেদী এইচ জাবেদ · মার্কেটিং, ডিজাইন ও সেলস, রিয়াদ",
+    "title":"মেহেদী এইচ জাবেদ · মার্কেটিং, ডিজাইন ও সেলস, রিয়াদ","name":"মেহেদী এইচ জাবেদ",
     "skip":"মূল অংশে যান","close":"বন্ধ করুন","loc":"রিয়াদ, সৌদি আরব","top":"উপরে যান ↑",
     "nav.work":"কাজ","nav.services":"সেবা","nav.about":"পরিচয়","nav.exp":"অভিজ্ঞতা","nav.contact":"যোগাযোগ",
     "hero.eb":"মার্কেটিং, ডিজাইন ও সেলস · রিয়াদ",
@@ -589,7 +594,7 @@ var I18N = {
     "cv":"সিভি ডাউনলোড","copy":"কপি","copied":"কপি হয়েছে","selected":"সিলেক্ট হয়েছে","ct.email":"ইমেইল","follow":"সোশ্যাল মিডিয়া"
   },
   ar: {
-    "title":"مهدي ه. جابد · التسويق والتصميم والمبيعات في الرياض",
+    "title":"مهدي ه. جابد · التسويق والتصميم والمبيعات في الرياض","name":"مهدي ه. جابد",
     "skip":"انتقل إلى المحتوى","close":"إغلاق","loc":"الرياض، المملكة العربية السعودية","top":"العودة للأعلى ↑",
     "nav.work":"أعمالي","nav.services":"الخدمات","nav.about":"نبذة عني","nav.exp":"الخبرات","nav.contact":"تواصل معي",
     "hero.eb":"التسويق والتصميم والمبيعات · الرياض",
