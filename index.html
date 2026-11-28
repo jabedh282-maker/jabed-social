@@ -23,8 +23,7 @@
 <meta name="twitter:image" content="https://jabed-social.vercel.app/og.jpg">
 <meta name="author" content="Mehedi H Jabed">
 <link rel="canonical" href="https://jabed-social.vercel.app/">
-<meta name="theme-color" content="#f7f5f1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141112" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#e3f2ff">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" as="image" href="me.jpg">
@@ -33,37 +32,45 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Manrope:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap">
 <style>
 :root{
-  --bg:#f7f5f1;
+  --bg:#f4f9ff;
   --paper:#ffffff;
-  --fg:#1a1615;
-  --muted:#5f5754;
-  --line:#e2dcd5;
-  --accent:#a3192f;
+  --fg:#0b2540;
+  --muted:#4a6783;
+  --line:#d3e4f4;
+  --accent:#0369a1;
   --accent-ink:#ffffff;
+  --btn:#0284c7;
+  --btn-ink:#ffffff;
+  --btn-hover:#0369a1;
+  --nav:rgba(255,255,255,.88);
   --font-display:"Newsreader",Georgia,"Times New Roman",serif;
   --font-body:"Manrope",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --wrap:1080px;
-  color-scheme:light dark;
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){
-  :root{--bg:#141112;--paper:#1c1819;--fg:#f1ebe8;--muted:#a59b97;--line:#2f292a;--accent:#e45a6f;--accent-ink:#160f10}
-}
+html[data-skin="dark"]{--bg:#141112;--paper:#1c1819;--fg:#f1ebe8;--muted:#a59b97;--line:#2f292a;--accent:#e45a6f;--accent-ink:#160f10;
+  --btn:#f1ebe8;--btn-ink:#141112;--btn-hover:#e45a6f;--nav:#141112;color-scheme:dark}
 html[lang="bn"]{--font-display:"Hind Siliguri",system-ui,sans-serif;--font-body:"Hind Siliguri",system-ui,"Nirmala UI",sans-serif}
 html[lang="ar"]{--font-display:"Cairo",system-ui,"Segoe UI",Tahoma,sans-serif;--font-body:"Cairo",system-ui,"Segoe UI",Tahoma,sans-serif}
 .latin{font-family:"Newsreader",Georgia,serif}
 
 *{box-sizing:border-box}
 html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body{margin:0;background:linear-gradient(180deg,#e3f2ff 0,var(--bg) 560px,#ffffff 100%);color:var(--fg);font-family:var(--font-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{max-width:100%;display:block}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .skip{position:absolute;left:12px;top:-60px;z-index:100;padding:10px 16px;background:var(--fg);color:var(--bg);font-weight:600;text-decoration:none}
 .skip:focus{top:12px}
+html[data-skin="dark"] body{background:var(--bg)}
+.skin-btn{appearance:none;cursor:pointer;flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:var(--paper)}
+.skin-btn:hover{border-color:var(--accent)}
+.skin-btn .dot{width:14px;height:14px;border-radius:50%;background:#141112;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+html[data-skin="dark"] .skin-btn .dot{background:#38bdf8}
 .ico{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-.125em;flex:none}
 
-.nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
 .brand{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:19px;text-decoration:none;white-space:nowrap}
 .menu{display:flex;gap:22px;margin-inline-start:auto}
@@ -85,12 +92,13 @@ h1{font-size:clamp(44px,7vw,82px);line-height:1;margin:0 0 24px;letter-spacing:-
 .lead{font-size:clamp(18px,2vw,21px);line-height:1.55;color:var(--muted);max-width:40ch;margin:0 0 32px}
 .lead strong{color:var(--fg);font-weight:600}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:15px;padding:12px 20px;border-radius:6px;border:1px solid var(--fg)}
-.btn-primary{background:var(--fg);color:var(--bg)}
-.btn-primary:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:15px;padding:12px 20px;border-radius:8px;border:1px solid var(--fg)}
+.btn-primary{background:var(--btn);border-color:var(--btn);color:var(--btn-ink)}
+.btn-primary:hover{background:var(--btn-hover);border-color:var(--btn-hover);color:var(--accent-ink)}
 .btn-ghost:hover{background:var(--paper)}
 .portrait{margin:0}
-.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:4px}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:8px;box-shadow:0 30px 60px -30px rgba(11,37,64,.45)}
+html[data-skin="dark"] .portrait img{box-shadow:none}
 @media (max-width:820px){
   .hero{padding-block:36px 0}
   .hero-grid{grid-template-columns:1fr;gap:32px}
@@ -113,7 +121,7 @@ h2{font-size:clamp(30px,4vw,42px);line-height:1.1;margin:0}
 
 .works{display:grid;grid-template-columns:repeat(2,1fr);gap:40px 28px}
 .work{appearance:none;font:inherit;color:inherit;text-align:start;cursor:pointer;display:flex;flex-direction:column;gap:14px;padding:0;border:0;background:none}
-.work .shot{display:block;aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:var(--paper);border:1px solid var(--line)}
+.work .shot{display:block;aspect-ratio:16/10;overflow:hidden;border-radius:8px;background:var(--paper);border:1px solid var(--line)}
 .work .shot img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
 .work:hover .shot img{opacity:.88}
 .work .meta{display:flex;flex-direction:column;gap:4px}
@@ -132,6 +140,10 @@ h2{font-size:clamp(30px,4vw,42px);line-height:1.1;margin:0}
 @media (max-width:900px){.services{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.services{grid-template-columns:1fr}}
 
+.brands{display:grid;grid-template-columns:repeat(3,1fr);margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.brands li{padding:22px 4px;border-bottom:1px solid var(--line);font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-.01em}
+@media (min-width:900px){.brands{grid-template-columns:repeat(5,1fr)}}
+html[lang="bn"] .brands li,html[lang="ar"] .brands li{font-family:"Newsreader",Georgia,serif}
 .about{display:grid;grid-template-columns:1.4fr .6fr;gap:64px}
 .about .text p{margin:0 0 18px;max-width:62ch}
 .about .text strong{font-weight:600}
@@ -190,6 +202,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.02em}
 html[lang="bn"] h2,html[lang="ar"] h2,html[lang="bn"] h3,html[lang="ar"] h3{letter-spacing:0;line-height:1.35}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
+<script>try{var sk=localStorage.getItem("skin");if(sk==="dark"||sk==="ruby")document.documentElement.setAttribute("data-skin","dark")}catch(e){}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Mehedi H Jabed","url":"https://jabed-social.vercel.app/","image":"https://jabed-social.vercel.app/me.jpg",
  "jobTitle":"Sales & Marketing","worksFor":{"@type":"Organization","name":"Enma Security Trading Co."},
@@ -217,6 +230,7 @@ html[lang="bn"] h2,html[lang="ar"] h2,html[lang="bn"] h3,html[lang="ar"] h3{lett
       <button type="button" data-lang="bn" lang="bn" aria-pressed="false">বাংলা</button>
       <button type="button" data-lang="ar" lang="ar" aria-pressed="false">عربي</button>
     </div>
+    <button class="skin-btn" id="skin-btn" type="button" aria-label="Switch to dark theme" title="Dark theme"><span class="dot"></span></button>
   </div>
 </header>
 
@@ -298,6 +312,16 @@ html[lang="bn"] h2,html[lang="ar"] h2,html[lang="bn"] h3,html[lang="ar"] h3{lett
         <li><h3 data-i18n="s.web">Websites</h3><p data-i18n="s.web.p">One-page websites and link pages that load fast on a phone.</p></li>
         <li><h3 data-i18n="s.sales">Sales</h3><p data-i18n="s.sales.p">Face-to-face selling, quotations and client follow-up in the Saudi market.</p></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="block" id="brands">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="br.h">Brands I sell</h2>
+        <p data-i18n="br.p">Security cameras, intercoms and networking products I sell at Enma Security.</p>
+      </div>
+      <ul class="brands" dir="ltr"><li>Hikvision</li><li>Dahua</li><li>EZVIZ</li><li>Imou</li><li>TP-Link</li><li>Grandstream</li><li>Ruijie</li><li>Visio</li><li>KMC</li></ul>
     </div>
   </section>
 
@@ -421,6 +445,7 @@ var I18N = {
     "w.menu.t":"মোহনা কিচেন · মেনু ডিজাইন","w.menu.d":"একটি বাংলাদেশি রেস্টুরেন্টের জন্য বাংলা, আরবি ও ইংরেজি মেনু।",
     "w.menu.l":"রিয়াদের একটি কাল্পনিক বাংলাদেশি রেস্টুরেন্টের মেনু ও অফার ডিজাইন, যা বাংলাদেশি, আরব ও ইংরেজিভাষী সবাই সহজে পড়তে পারে।",
     "svc.p":"যে কাজগুলো আমি একা বা আপনার টিমের সাথে করতে পারি।",
+    "br.h":"যে ব্র্যান্ডগুলো বিক্রি করি","br.p":"Enma Security-তে যে সিকিউরিটি ক্যামেরা, ইন্টারকম আর নেটওয়ার্কিং পণ্য বিক্রি করি।",
     "s.mkt":"ডিজিটাল মার্কেটিং","s.gd":"গ্রাফিক ডিজাইন","s.vid":"ভিডিও এডিটিং","s.cc":"কনটেন্ট ক্রিয়েশন","s.web":"ওয়েবসাইট","s.sales":"সেলস",
     "s.mkt.p":"কনটেন্ট প্ল্যান, Meta ও TikTok অ্যাড, আর প্রতিটি ক্যাম্পেইন থেকে কী ফল এল তার ছোট রিপোর্ট।",
     "s.gd.p":"সোশ্যাল পোস্ট, লোগো, মেনু আর প্রিন্ট ডিজাইন, আরবি, ইংরেজি ও বাংলায়।",
@@ -469,6 +494,7 @@ var I18N = {
     "w.menu.t":"مطبخ موهونا · تصميم قائمة طعام","w.menu.d":"قائمة طعام بالبنغالية والعربية والإنجليزية لمطعم بنغلاديشي.",
     "w.menu.l":"تصميم قائمة طعام وعرض ترويجي لمطعم بنغلاديشي خيالي في الرياض، سهلة القراءة للزبائن البنغلاديشيين والعرب والناطقين بالإنجليزية.",
     "svc.p":"ما يمكنني تنفيذه بمفردي أو ضمن فريقك.",
+    "br.h":"العلامات التجارية التي أبيعها","br.p":"كاميرات المراقبة وأنظمة الاتصال الداخلي ومنتجات الشبكات التي أبيعها لدى <bdi dir=\"ltr\">Enma Security</bdi>.",
     "s.mkt":"التسويق الرقمي","s.gd":"التصميم الجرافيكي","s.vid":"مونتاج الفيديو","s.cc":"صناعة المحتوى","s.web":"المواقع الإلكترونية","s.sales":"المبيعات",
     "s.mkt.p":"خطط محتوى، وإعلانات Meta وTikTok، وتقرير مختصر بنتائج كل حملة.",
     "s.gd.p":"منشورات وشعارات وقوائم طعام ومطبوعات بالعربية والإنجليزية والبنغالية.",
@@ -534,6 +560,22 @@ document.getElementById('copy-email').addEventListener('click', function () {
   if (navigator.clipboard) navigator.clipboard.writeText(email).then(function () { done('copied'); }, fallback);
   else fallback();
 });
+
+(function () {
+  var root = document.documentElement, btn = document.getElementById('skin-btn'), meta = document.querySelector('meta[name="theme-color"]');
+  function label() {
+    var dark = root.getAttribute('data-skin') === 'dark';
+    btn.setAttribute('aria-label', dark ? 'Switch to Sky theme' : 'Switch to dark theme'); btn.title = dark ? 'Sky theme' : 'Dark theme';
+    if (meta) meta.setAttribute('content', dark ? '#141112' : '#e3f2ff');
+  }
+  btn.addEventListener('click', function () {
+    var dark = root.getAttribute('data-skin') === 'dark';
+    if (dark) root.removeAttribute('data-skin'); else root.setAttribute('data-skin', 'dark');
+    try { localStorage.setItem('skin', dark ? 'sky' : 'dark'); } catch (e) {}
+    label();
+  });
+  label();
+})();
 
 (function () {
   var WORK = {

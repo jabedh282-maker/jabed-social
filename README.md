@@ -4,7 +4,7 @@ Personal portfolio and link page, live at **https://jabed-social.vercel.app**
 
 | File | What it is |
 |---|---|
-| `index.html` | Portfolio in English, বাংলা and العربية (follows the visitor's light or dark setting) |
+| `index.html` | Portfolio in English, বাংলা and العربية, Sky theme with a dark-theme switch |
 | `links.html` | Link-in-bio page, served at `/links` |
 | `404.html` | Not-found page |
 | `me.jpg` | Profile photo |
@@ -17,6 +17,6 @@ Personal portfolio and link page, live at **https://jabed-social.vercel.app**
 | `robots.txt`, `sitemap.xml` | Search engine files |
 
 Plain HTML, no build step. Vercel deploys every push to `main`.
-The language choice is saved in the browser.
+Language and theme choices are saved in the browser.
 Concept projects in the Work section are self-initiated samples for fictional brands and are labelled as such on the site.
 Icons are inline SVG from Font Awesome Free 6.5.1 (CC BY 4.0).
