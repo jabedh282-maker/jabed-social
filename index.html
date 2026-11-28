@@ -80,7 +80,10 @@ img{max-width:100%;display:block}
 .ico{display:inline-block;width:1em;height:1em;fill:currentColor;vertical-align:-.125em;flex:none}
 
 .aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.aurora span{position:absolute;border-radius:50%;filter:blur(100px);opacity:.42}
+.aurora span{position:absolute;border-radius:50%;filter:blur(100px);opacity:.42;animation:drift 24s ease-in-out infinite alternate}
+.aurora span:nth-child(2){animation-delay:-8s}.aurora span:nth-child(3){animation-delay:-15s}
+@keyframes drift{to{transform:translate(70px,50px) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.aurora span{animation:none}}
 .aurora span:nth-child(1){width:640px;height:640px;background:var(--ruby-deep);top:-240px;left:-200px}
 .aurora span:nth-child(2){width:520px;height:520px;background:#5a3a12;top:12%;right:-220px;opacity:.28}
 .aurora span:nth-child(3){width:500px;height:500px;background:#4a0a2e;bottom:-220px;left:32%;opacity:.35}
@@ -116,13 +119,14 @@ html[data-skin="sky"] .skin-btn .dot{background:linear-gradient(135deg,#ff5a6e,#
 @media (max-width:420px){.brand{font-size:13px}.nav .wrap{gap:10px}.lang-switch button{padding:6px 8px}}
 
 .hero{padding-block:80px 0}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:64px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
 html[lang="bn"] .eyebrow,html[lang="ar"] .eyebrow{letter-spacing:0;font-size:14px}
 h1,h2,h3{text-wrap:balance}
-h1{font-family:"Unbounded","Arial Black",system-ui,sans-serif;font-weight:700;font-size:clamp(40px,6.2vw,72px);line-height:1.02;letter-spacing:-.03em;margin:0 0 22px}
-.lead{font-size:clamp(16px,1.8vw,19px);color:var(--muted);max-width:50ch;margin:0 0 30px}
+h1{font-family:"Unbounded","Arial Black",system-ui,sans-serif;font-weight:700;font-size:clamp(38px,5.2vw,66px);line-height:1.02;letter-spacing:-.03em;margin:0 0 22px}
+.lead{font-size:clamp(16px,1.8vw,19px);color:var(--muted);max-width:46ch;margin:0 0 32px}
+@media (min-width:1100px){h1 .latin{white-space:nowrap}}
 .lead strong{color:var(--fg);font-weight:600}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:15px;padding:14px 22px;border-radius:14px;transition:transform .2s,box-shadow .2s,background .2s}
@@ -154,12 +158,15 @@ html[data-skin="sky"] .portrait::before{border-color:rgba(14,165,233,.35)}
 html[data-skin="sky"] .facts{box-shadow:0 14px 34px -24px rgba(12,74,130,.35)}
 @media (max-width:760px){.facts{grid-template-columns:1fr;margin-top:40px}.facts div+div{border-inline-start:0;border-top:1px solid var(--line)}}
 
-section.block{padding-block:96px 0}
-.head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 40px;margin-bottom:36px}
+section.block{padding-block:112px 0}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);align-items:end;gap:14px 48px;margin-bottom:40px}
+.head .eyebrow{margin-bottom:14px}
+.head.solo{grid-template-columns:1fr}
+.head p{color:var(--muted);margin:0;max-width:none}
+@media (max-width:860px){.head{grid-template-columns:1fr;margin-bottom:26px}}
 .kicker{display:block;margin-bottom:10px}
 h2{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;line-height:1.1;margin:0}
 html[lang="bn"] h2,html[lang="ar"] h2{letter-spacing:0;line-height:1.3}
-.head p{color:var(--muted);max-width:46ch;margin:0}
 @media (max-width:760px){section.block{padding-block:64px 0}.head{margin-bottom:24px}}
 
 .card{border:1px solid var(--line);border-radius:22px;background:var(--surface);transition:transform .3s,border-color .3s}
@@ -168,6 +175,13 @@ html[data-skin="sky"] .card{box-shadow:0 14px 34px -24px rgba(12,74,130,.35)}
 html[data-skin="sky"] .card:hover{border-color:rgba(14,165,233,.4)}
 
 .works{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.work.feat{grid-column:1/-1;display:grid;grid-template-columns:1.45fr 1fr}
+.work.feat .shot{aspect-ratio:auto;height:100%;min-height:340px;border-bottom:0;border-inline-end:1px solid var(--line)}
+.work.feat .meta{justify-content:center;padding:32px 34px;gap:10px}
+.work.feat b{font-family:var(--font-display);font-size:26px;line-height:1.25}
+.work.feat .d{font-size:16px}
+.work .more{margin-top:8px;font-size:14px;font-weight:700;color:var(--gold)}
+@media (max-width:860px){.work.feat{grid-template-columns:1fr}.work.feat .shot{aspect-ratio:16/10;min-height:0;border-inline-end:0;border-bottom:1px solid var(--line)}.work.feat .meta{padding:20px}}
 .work{appearance:none;font:inherit;color:inherit;text-align:start;cursor:pointer;display:flex;flex-direction:column;padding:0;overflow:hidden}
 .work .shot{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--bg-2);border-bottom:1px solid var(--line)}
 .work .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
@@ -218,7 +232,8 @@ html[data-skin="sky"] .kb-logos li{background:#fff}
 .sb.ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
 .sb.tt{background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
 .sb.tt .ico{filter:drop-shadow(-1.2px -1px 0 #25f4ee) drop-shadow(1.2px 1px 0 #fe2c55)}
-.sb.sc{background:#fffc00;color:#000}
+.socials a .sb.sc{background:#fffc00}
+.sb.sc .ico{font-size:18px}
 .about{display:grid;grid-template-columns:1.25fr .75fr;gap:24px}
 .about .text{font-size:17px;color:var(--muted)}
 .about .text p{margin:0 0 16px;max-width:62ch}
@@ -307,6 +322,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
     <nav class="menu" aria-label="Main">
       <a href="#work" data-i18n="nav.work">Work</a>
       <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#brands" data-i18n="nav.brands">Products</a>
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
@@ -346,13 +362,13 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
   <section class="block" id="work">
     <div class="wrap">
       <div class="head">
-        <h2 data-i18n="work.h">Selected work</h2>
+        <div><span class="eyebrow" data-i18n="work.eb">Portfolio</span><h2 data-i18n="work.h">Selected work</h2></div>
         <p data-i18n="work.p">Social media work for Enma Security, an app I built, this website and four self-initiated design concepts. Tap a project to see it larger.</p>
       </div>
       <div class="works">
-        <button class="card work" type="button" data-w="enma">
+        <button class="card work feat" type="button" data-w="enma">
           <span class="shot"><img src="work/enma/enma-t.jpg" alt="" width="800" height="500" loading="lazy" decoding="async"></span>
-          <span class="meta"><span class="kind real" data-i18n="k.client">Company work</span><b data-i18n="w.enma.t">Enma Security · Social media</b><span class="d" data-i18n="w.enma.d">Instagram posts and Reels I design and edit for @enmasco, since September 2026.</span></span>
+          <span class="meta"><span class="kind real" data-i18n="k.client">Company work</span><b data-i18n="w.enma.t">Enma Security · Social media</b><span class="d" data-i18n="w.enma.d">Instagram posts and Reels I design and edit for @enmasco, since September 2026.</span><span class="more" data-i18n="w.open">View posts and Reels →</span></span>
         </button>
         <button class="card work" type="button" data-w="barakah">
           <span class="shot"><img src="work/barakah-t.jpg" alt="" width="800" height="500" loading="lazy" decoding="async"></span>
@@ -386,7 +402,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
   <section class="block" id="services">
     <div class="wrap">
       <div class="head">
-        <h2 data-i18n="nav.services">Services</h2>
+        <div><span class="eyebrow" data-i18n="svc.eb">What I do</span><h2 data-i18n="nav.services">Services</h2></div>
         <p data-i18n="svc.p">What I can take on, on my own or as part of your team.</p>
       </div>
       <ul class="services">
@@ -403,7 +419,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
   <section class="block" id="brands">
     <div class="wrap">
       <div class="head">
-        <h2 data-i18n="br.h">Products I know</h2>
+        <div><span class="eyebrow" data-i18n="br.eb">Product knowledge</span><h2 data-i18n="br.h">Products I know</h2></div>
         <p data-i18n="br.p">Since 2022 I've sold these brands at Enma Security's store in Riyadh, helping customers pick the right camera or Wi-Fi setup for a home, shop, office or farm.</p>
       </div>
       <div class="kb">
@@ -430,7 +446,8 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
 
   <section class="block" id="about">
     <div class="wrap">
-      <div class="head"><h2 data-i18n="nav.about">About</h2></div>
+      <div class="head solo">
+        <div><span class="eyebrow" data-i18n="about.eb">Who I am</span><h2 data-i18n="nav.about">About</h2></div></div>
       <div class="about">
         <div class="text">
           <p data-i18n="about.1">I'm from Bangladesh and have lived in Riyadh since 2019. My first job here was with <strong>Saudi Ground Services (SGS)</strong> at Riyadh airport, coordinating ground-handling staff.</p>
@@ -450,7 +467,8 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
 
   <section class="block" id="experience">
     <div class="wrap">
-      <div class="head"><h2 data-i18n="nav.exp">Experience</h2></div>
+      <div class="head solo">
+        <div><span class="eyebrow" data-i18n="exp.eb">Career</span><h2 data-i18n="nav.exp">Experience</h2></div></div>
       <ol class="timeline">
         <li class="card job current">
           <div class="job-top"><h3><span data-i18n="j1.t">Sales &amp; Marketing</span><span class="tag" data-i18n="current">Current</span></h3><span class="when" data-i18n="j1.w">2022 – now</span></div>
@@ -473,6 +491,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
 
   <section class="block" id="contact">
     <div class="wrap contact">
+      <span class="eyebrow" data-i18n="nav.contact">Contact</span>
       <h2 data-i18n="ct.h">Tell me what you need.</h2>
       <p class="lead" data-i18n="ct.p">Send a short note about your project by email or WhatsApp.</p>
       <div class="mail">
@@ -489,7 +508,7 @@ html[lang="bn"] h1 .latin,html[lang="ar"] h1 .latin{letter-spacing:-.03em}
         <a href="https://www.facebook.com/share/1ERb8BcRgr/" target="_blank" rel="noopener"><span class="sb fb"><svg class="ico" aria-hidden="true"><use href="#i-facebook-f"/></svg></span>Facebook</a>
         <a href="https://www.instagram.com/mehedihjabed.25" target="_blank" rel="noopener"><span class="sb ig"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></span>Instagram</a>
         <a href="https://www.tiktok.com/@mehedi.h.jabed" target="_blank" rel="noopener"><span class="sb tt"><svg class="ico" aria-hidden="true"><use href="#i-tiktok"/></svg></span>TikTok</a>
-        <a href="https://www.snapchat.com/add/mehedi.jabed" target="_blank" rel="noopener"><span class="sb sc"><svg class="ico" aria-hidden="true"><use href="#i-snapchat"/></svg></span>Snapchat</a>
+        <a href="https://www.snapchat.com/add/mehedi.jabed" target="_blank" rel="noopener"><span class="sb sc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round" d="M12 2.6c-3.2 0-5.5 2.4-5.5 5.6v2.4c-.7.2-1.4-.2-1.8 0-.5.3-.2 1 .3 1.3.7.4 1.6.6 1.5 1.3-.4 1.5-1.8 3-3.6 3.6-.5.2-.4.8.1 1 .8.3 1.8.4 2.1.8.2.4.1 1 .6 1.1.7.1 1.6-.2 2.6.1 1.1.4 2.1 1.7 3.7 1.7s2.6-1.3 3.7-1.7c1-.3 1.9 0 2.6-.1.5-.1.4-.7.6-1.1.3-.4 1.3-.5 2.1-.8.5-.2.6-.8.1-1-1.8-.6-3.2-2.1-3.6-3.6-.1-.7.8-.9 1.5-1.3.5-.3.8-1 .3-1.3-.4-.2-1.1.2-1.8 0V8.2c0-3.2-2.3-5.6-5.5-5.6z"/></svg></span>Snapchat</a>
       </div>
     </div>
   </section>
@@ -548,7 +567,7 @@ var I18N = {
     "br.h":"যে পণ্যগুলো ভালো জানি","br.p":"২০২২ থেকে রিয়াদে Enma Security-র দোকানে এই ব্র্যান্ডগুলো বিক্রি করছি। বাসা, দোকান, অফিস বা খামারের জন্য কোন ক্যামেরা বা Wi-Fi সেটআপ ঠিক হবে, কাস্টমারকে তা বেছে নিতে সাহায্য করি।",
     "kb1.h":"সিকিউরিটি ক্যামেরা ও ইন্টারকম","kb1.p":"ইনডোর, আউটডোর ও ঘোরানো যায় এমন ক্যামেরা, রঙিন নাইট ভিশন, বিদ্যুৎ নেই এমন জায়গার জন্য সোলার ও 4G ক্যামেরা, NVR রেকর্ডিং আর ভিডিও ইন্টারকম কিট।",
     "kb2.h":"নেটওয়ার্কিং ও Wi-Fi","kb2.p":"বাসা, দোকান ও অফিসের জন্য রাউটার, রেঞ্জ এক্সটেন্ডার আর Wi-Fi অ্যাক্সেস পয়েন্ট।",
-    "kb3.h":"আরও","u.home":"বাসা","u.shop":"দোকান","u.office":"অফিস","u.farm":"খামার ও ইস্তিরাহা","tm":"ব্র্যান্ডের নাম ও লোগো তাদের মালিকদের। আমি যে পণ্যগুলো বিক্রি করি তা দেখাতে এখানে ব্যবহার করা হয়েছে।","kb3.p":"ফিচার, দাম আর ইনস্টলেশনের অপশন বুঝিয়ে বলি, যাতে কাস্টমার তার জায়গা আর বাজেট অনুযায়ী ঠিক জিনিসটা কেনেন।",
+    "kb3.h":"আরও","u.home":"বাসা","u.shop":"দোকান","u.office":"অফিস","u.farm":"খামার ও ইস্তিরাহা","work.eb":"পোর্টফোলিও","svc.eb":"আমি যা করি","br.eb":"পণ্যের জ্ঞান","about.eb":"আমি কে","exp.eb":"ক্যারিয়ার","nav.brands":"পণ্য","w.open":"পোস্ট ও রিলস দেখুন →","tm":"ব্র্যান্ডের নাম ও লোগো তাদের মালিকদের। আমি যে পণ্যগুলো বিক্রি করি তা দেখাতে এখানে ব্যবহার করা হয়েছে।","kb3.p":"ফিচার, দাম আর ইনস্টলেশনের অপশন বুঝিয়ে বলি, যাতে কাস্টমার তার জায়গা আর বাজেট অনুযায়ী ঠিক জিনিসটা কেনেন।",
     "s.mkt":"ডিজিটাল মার্কেটিং","s.gd":"গ্রাফিক ডিজাইন","s.vid":"ভিডিও এডিটিং","s.cc":"কনটেন্ট ক্রিয়েশন","s.web":"ওয়েবসাইট","s.sales":"সেলস",
     "s.mkt.p":"কনটেন্ট প্ল্যান, Meta ও TikTok অ্যাড, আর প্রতিটি ক্যাম্পেইন থেকে কী ফল এল তার ছোট রিপোর্ট।",
     "s.gd.p":"সোশ্যাল পোস্ট, লোগো, মেনু আর প্রিন্ট ডিজাইন, আরবি, ইংরেজি ও বাংলায়।",
@@ -600,7 +619,7 @@ var I18N = {
     "br.h":"منتجات أعرفها جيدًا","br.p":"منذ 2022 أبيع هذه العلامات في متجر <bdi dir=\"ltr\">Enma Security</bdi> بالرياض، وأساعد العملاء في اختيار الكاميرا أو إعداد Wi-Fi المناسب للمنزل أو المحل أو المكتب أو المزرعة.",
     "kb1.h":"كاميرات المراقبة والاتصال الداخلي","kb1.p":"كاميرات داخلية وخارجية ومتحركة، ورؤية ليلية بالألوان، وكاميرات بالطاقة الشمسية و4G للمواقع بلا كهرباء، وتسجيل NVR، وأطقم الاتصال الداخلي بالفيديو.",
     "kb2.h":"الشبكات وWi-Fi","kb2.p":"راوترات وموسعات تغطية ونقاط وصول Wi-Fi للمنازل والمحلات والمكاتب.",
-    "kb3.h":"أيضًا","u.home":"المنازل","u.shop":"المحلات","u.office":"المكاتب","u.farm":"المزارع والاستراحات","tm":"أسماء العلامات التجارية وشعاراتها مملوكة لأصحابها، وتُعرض هنا لبيان المنتجات التي أبيعها.","kb3.p":"أشرح المزايا والأسعار وخيارات التركيب ليشتري العميل ما يناسب مكانه وميزانيته.",
+    "kb3.h":"أيضًا","u.home":"المنازل","u.shop":"المحلات","u.office":"المكاتب","u.farm":"المزارع والاستراحات","work.eb":"معرض الأعمال","svc.eb":"ما أقدمه","br.eb":"معرفة المنتجات","about.eb":"من أنا","exp.eb":"المسيرة المهنية","nav.brands":"المنتجات","w.open":"شاهد المنشورات والريلز ←","tm":"أسماء العلامات التجارية وشعاراتها مملوكة لأصحابها، وتُعرض هنا لبيان المنتجات التي أبيعها.","kb3.p":"أشرح المزايا والأسعار وخيارات التركيب ليشتري العميل ما يناسب مكانه وميزانيته.",
     "s.mkt":"التسويق الرقمي","s.gd":"التصميم الجرافيكي","s.vid":"مونتاج الفيديو","s.cc":"صناعة المحتوى","s.web":"المواقع الإلكترونية","s.sales":"المبيعات",
     "s.mkt.p":"خطط محتوى، وإعلانات Meta وTikTok، وتقرير مختصر بنتائج كل حملة.",
     "s.gd.p":"منشورات وشعارات وقوائم طعام ومطبوعات بالعربية والإنجليزية والبنغالية.",
