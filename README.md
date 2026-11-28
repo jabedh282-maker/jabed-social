@@ -4,7 +4,7 @@ Personal portfolio and link page, live at **https://jabed-social.vercel.app**
 
 | File | What it is |
 |---|---|
-| `index.html` | Portfolio in English, বাংলা and العربية, Sky theme with a dark-theme switch |
+| `index.html` | Portfolio in English, বাংলা and العربية, with Ruby and Sky themes |
 | `links.html` | Link-in-bio page, served at `/links` |
 | `404.html` | Not-found page |
 | `me.jpg` | Profile photo |
